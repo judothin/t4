@@ -15,24 +15,24 @@ canvas {
 
 .back-button {
     position: absolute;
-    top: 10px; /* Adjust as needed */
-    left: 10px; /* Adjust as needed */
+    top: 10px;
+    left: 10px;
     text-decoration: none;
-    color: #000; /* Button text color */
-    font-size: 16px; /* Adjust as needed */
+    color: #000;
+    font-size: 16px;
     background-color: transparent;
     border: none;
     cursor: pointer;
     padding: 8px;
-    font-family: Arial, sans-serif; /* Match your design */
+    font-family: Arial, sans-serif;
 }
 
 .back-button::after {
     content: '';
     display: block;
     width: 0;
-    height: 2px; /* Underline thickness */
-    background: #000; /* Underline color */
+    height: 2px;
+    background: #000;
     transition: width 0.3s;
 }
 
