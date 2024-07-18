@@ -1,0 +1,33 @@
+.links {
+    display: flex;
+    margin-left: 40px;
+    margin-top: 40px;
+    font-size: 50px;
+}
+
+.links a {
+    position: relative;
+    color: transparent;
+    margin-right: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: linear-gradient(to right, #9d44f0, #000000);
+    -webkit-background-clip: text;
+    cursor: pointer;
+}
+
+.links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: #9d44f0;
+    bottom: -10px;
+    left: 0;
+    transition: width 0.5s ease;
+    border-radius: 10px;
+}
+
+.links a:hover::after {
+    width: 100%;
+}
+

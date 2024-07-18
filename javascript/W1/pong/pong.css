@@ -1,13 +1,14 @@
 @charset "UTF-8";
 
-body{
+body {
+    margin: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-canvas{
-    border:1px solid black;
+
+canvas {
+    border: 2px solid black;
     background-color: #ffffff;
-    justify-content: center;
-    align-items: center;
 }
