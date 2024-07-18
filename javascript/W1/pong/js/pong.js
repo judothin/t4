@@ -6,7 +6,7 @@ var ctx = c.getContext(`2d`)
 var timer = setInterval(main, 1000/60)
 
 //global friction variable
-var fy = .97
+var fy = .85
 
 //p1 setup
 var p1 = new Box();
@@ -18,9 +18,15 @@ p1.x = 0 + p1.w/2
 var ball = new Box();
 ball.w = 20
 ball.h = 20
-ball.vx = -2
-ball.vy = -2
+ball.vx = -5
+ball.vy = -5
 ball.color = `black`
+
+//p2 setup
+var p2 = new Box();
+p2.w = 20
+p2.h = 150
+p2.x = c.width - p2.w/2
 
 function main()
 {
@@ -61,6 +67,12 @@ function main()
         ball.x = c.width/2
         ball.y  =c.height/2
     }
+    // ball collision with the right side
+    if(ball.x > c.width) {
+        ball.x = c.width/2;
+        ball.y = c.height/2;
+    }
+    //---------------------------
     if(ball.x > c.width)
     {
         ball.x = c.width
@@ -88,4 +100,37 @@ function main()
     //draw the objects
     p1.draw()
     ball.draw()
+
+    // p2 acceleration
+    if(keys[`ArrowUp`])
+    {
+        p2.vy += -p2.force
+    }
+    if(keys[`ArrowDown`])
+    {
+        p2.vy += p2.force
+    }
+    // p2 friction
+    p2.vy *= fy
+    // p2 movement
+    p2.move()
+    // p2 collision
+    if(p2.y < 0+p2.h/2)
+    {
+        p2.y = 0+p2.h/2
+    }
+    if(p2.y > c.height-p2.h/2)
+    {
+        p2.y = c.height-p2.h/2
+    }
+    // p2 with ball collision
+    if(ball.collide(p2))
+    {
+        ball.x = p2.x - p2.w/2 - ball.w/2
+        ball.vx = -ball.vx
+    }
+    // draw p2
+    p2.draw()
+
 }
+

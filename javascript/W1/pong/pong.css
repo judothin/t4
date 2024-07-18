@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 canvas{
     border:1px solid black;
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
 }
