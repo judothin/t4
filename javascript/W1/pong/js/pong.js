@@ -1,4 +1,4 @@
-//canvas and context
+    //canvas and context
 var c = document.querySelector(`#pong`)
 var ctx = c.getContext(`2d`)
 
@@ -32,7 +32,7 @@ function main()
 {
     //erases the canvas
     ctx.clearRect(0,0,c.width,c.height)
-    
+
     //p1 accelerates when key is pressed 
     if(keys[`w`])
     {
