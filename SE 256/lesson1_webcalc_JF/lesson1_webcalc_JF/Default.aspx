@@ -9,6 +9,7 @@
                     <td colspan="3"> <asp:TextBox ID="membox" Columns="2" runat="server" /> </td>
                 </td>
             </tr>
+
             <tr>
                 <td><asp:Button ID="btn1" Text="1" runat="server" OnClick="btn1_Click" /></td>
                 <td><asp:Button ID="btn2" Text="2" runat="server" OnClick="btn2_Click" /></td>
@@ -17,18 +18,24 @@
                 <td colspan="3"> <asp:TextBox ID="lastOpbox" Columns="2" runat="server" /> </td>
                 
             </tr>
+
             <tr>
                 <td><asp:Button ID="btn4" Text="4" runat="server" OnClick="numbuttons_Click" /></td>
                 <td><asp:Button ID="btn5" Text="5" runat="server" OnClick="numbuttons_Click" /></td>
                 <td><asp:Button ID="btn6" Text="6" runat="server" OnClick="numbuttons_Click" /></td>
                 <td><asp:Button ID="plsbtn" Text="+" runat="server" OnClick="plsbtn_Click" /></td>
             </tr>
+            <tr>
                 <td><asp:Button ID="btn7" Text="7" runat="server" OnClick="numbuttons_Click" /></td>
                 <td><asp:Button ID="btn8" Text="8" runat="server" OnClick="numbuttons_Click" /></td>
                 <td><asp:Button ID="btn9" Text="9" runat="server" OnClick="numbuttons_Click" /></td>
-                <td><asp:Button ID="minbutton" Text="-" runat="server" OnClick="plsbtn_Click" /></td>
+                <td><asp:Button ID="minbutton" Text="-" runat="server" OnClick="minbutton_Click" /></td>
+            </tr>
+                
             <tr>
-                <td></td>
+                <td><asp:Button ID="btn0" Text="0" runat="server" OnClick="numbuttons_Click" /></td>
+                <td><asp:Button ID="multbtn" Text="*" runat="server" OnClick="multbtn_Click" /></td>
+                <td><asp:Button ID="divbtn" Text="/" runat="server" OnClick="divbtn_Click" /></td>
             </tr>
 
         </table>
