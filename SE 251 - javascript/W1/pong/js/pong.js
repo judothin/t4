@@ -1,4 +1,4 @@
-    //canvas and context
+//canvas and context
 var c = document.querySelector(`#pong`)
 var ctx = c.getContext(`2d`)
 
@@ -13,6 +13,8 @@ var p1 = new Box();
 p1.w = 20
 p1.h = 150
 p1.x = 0 + p1.w/2
+p1.color = `purple`
+
 
 //ball setup
 var ball = new Box();
@@ -27,6 +29,7 @@ var p2 = new Box();
 p2.w = 20
 p2.h = 150
 p2.x = c.width - p2.w/2
+p2.color = `purple`
 
 function main()
 {
@@ -91,10 +94,10 @@ function main()
     }
 
     //p1 with ball collision
-    if(ball.collide(p1))
-    {
-        ball.x = p1.x + p1.w/2 + ball.w/2
+    if (ball.collide(p1)) {
+        ball.x = p1.x + p1.w / 2 + ball.w / 2;
         ball.vx = -ball.vx;
+        applyShakeEffect(p1);
     }
 
     //draw the objects
@@ -102,11 +105,11 @@ function main()
     ball.draw()
 
     // p2 acceleration
-    if(keys[`ArrowUp`])
+    if(keys[`o`])
     {
         p2.vy += -p2.force
     }
-    if(keys[`ArrowDown`])
+    if(keys[`l`])
     {
         p2.vy += p2.force
     }
@@ -124,10 +127,10 @@ function main()
         p2.y = c.height-p2.h/2
     }
     // p2 with ball collision
-    if(ball.collide(p2))
-    {
-        ball.x = p2.x - p2.w/2 - ball.w/2
-        ball.vx = -ball.vx
+    if (ball.collide(p2)) {
+        ball.x = p2.x - p2.w / 2 - ball.w / 2;
+        ball.vx = -ball.vx;
+        applyShakeEffect(p2);
     }
     // draw p2
     p2.draw()

@@ -34,9 +34,38 @@ canvas {
     height: 2px;
     background: #000;
     transition: width 0.3s;
+    animation: shake 0.5s; /* Added animation property */
 }
 
 .back-button:hover::after {
     width: 100%;
 }
 
+
+h2 {
+    font-family: Arial, sans-serif;
+    margin-right: 25px;
+    
+}
+
+.container {
+    display: flex;
+    justify-content: center; 
+    margin-right: 90px;
+}
+
+.menu {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: 130px;
+    padding: 25px;
+    border: dashed 2px purple;
+    border-radius: 15px;
+    width: 300px;
+    height: 400px;
+}
+
+.menu h1 {
+    font-family: Arial, sans-serif;
+    margin-right: 25px;
+}
