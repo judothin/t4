@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\PROJECTS\\t4\\SE 256 - web development\\week2_assignment\\",
+  "WorkspaceRootPath": "X:\\projects\\t4\\SE 256 - web development\\W2\\week2_assignment\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{64E43DFC-4082-4A83-A339-2D4315EBD701}|week2_assignment\\week2_assignment.csproj|c:\\projects\\t4\\se 256 - web development\\week2_assignment\\week2_assignment\\backend\\controlpanel.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64E43DFC-4082-4A83-A339-2D4315EBD701}|week2_assignment\\week2_assignment.csproj|solutionrelative:week2_assignment\\backend\\controlpanel.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{64E43DFC-4082-4A83-A339-2D4315EBD701}|week2_assignment\\week2_assignment.csproj|X:\\projects\\t4\\SE 256 - web development\\W2\\week2_assignment\\week2_assignment\\backend\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{64E43DFC-4082-4A83-A339-2D4315EBD701}|week2_assignment\\week2_assignment.csproj|solutionrelative:week2_assignment\\backend\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64E43DFC-4082-4A83-A339-2D4315EBD701}|week2_assignment\\week2_assignment.csproj|c:\\projects\\t4\\se 256 - web development\\week2_assignment\\week2_assignment\\backend\\controlpanel.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{64E43DFC-4082-4A83-A339-2D4315EBD701}|week2_assignment\\week2_assignment.csproj|solutionrelative:week2_assignment\\backend\\controlpanel.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64E43DFC-4082-4A83-A339-2D4315EBD701}|week2_assignment\\week2_assignment.csproj|c:\\projects\\t4\\se 256 - web development\\week2_assignment\\week2_assignment\\backend\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{64E43DFC-4082-4A83-A339-2D4315EBD701}|week2_assignment\\week2_assignment.csproj|X:\\projects\\t4\\SE 256 - web development\\W2\\week2_assignment\\week2_assignment\\backend\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{64E43DFC-4082-4A83-A339-2D4315EBD701}|week2_assignment\\week2_assignment.csproj|solutionrelative:week2_assignment\\backend\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64E43DFC-4082-4A83-A339-2D4315EBD701}|week2_assignment\\week2_assignment.csproj|c:\\projects\\t4\\se 256 - web development\\week2_assignment\\week2_assignment\\backend\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{64E43DFC-4082-4A83-A339-2D4315EBD701}|week2_assignment\\week2_assignment.csproj|solutionrelative:week2_assignment\\backend\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{64E43DFC-4082-4A83-A339-2D4315EBD701}|week2_assignment\\week2_assignment.csproj|X:\\projects\\t4\\SE 256 - web development\\W2\\week2_assignment\\week2_assignment\\backend\\controlpanel.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{64E43DFC-4082-4A83-A339-2D4315EBD701}|week2_assignment\\week2_assignment.csproj|solutionrelative:week2_assignment\\backend\\controlpanel.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64E43DFC-4082-4A83-A339-2D4315EBD701}|week2_assignment\\week2_assignment.csproj|x:\\projects\\t4\\se 256 - web development\\w2\\week2_assignment\\week2_assignment\\backend\\controlpanel.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64E43DFC-4082-4A83-A339-2D4315EBD701}|week2_assignment\\week2_assignment.csproj|solutionrelative:week2_assignment\\backend\\controlpanel.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,28 +26,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "ControlPanel.aspx.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\week2_assignment\\week2_assignment\\Backend\\ControlPanel.aspx.cs",
+              "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\W2\\week2_assignment\\week2_assignment\\Backend\\ControlPanel.aspx.cs",
               "RelativeDocumentMoniker": "week2_assignment\\Backend\\ControlPanel.aspx.cs",
-              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\week2_assignment\\week2_assignment\\Backend\\ControlPanel.aspx.cs",
+              "ToolTip": "X:\\projects\\t4\\SE 256 - web development\\W2\\week2_assignment\\week2_assignment\\Backend\\ControlPanel.aspx.cs",
               "RelativeToolTip": "week2_assignment\\Backend\\ControlPanel.aspx.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABoAAAA4AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-23T12:25:29.682Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ControlPanel.aspx",
-              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\week2_assignment\\week2_assignment\\Backend\\ControlPanel.aspx",
+              "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\W2\\week2_assignment\\week2_assignment\\Backend\\ControlPanel.aspx",
               "RelativeDocumentMoniker": "week2_assignment\\Backend\\ControlPanel.aspx",
-              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\week2_assignment\\week2_assignment\\Backend\\ControlPanel.aspx",
+              "ToolTip": "X:\\projects\\t4\\SE 256 - web development\\W2\\week2_assignment\\week2_assignment\\Backend\\ControlPanel.aspx",
               "RelativeToolTip": "week2_assignment\\Backend\\ControlPanel.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -56,24 +56,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Default.aspx.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\week2_assignment\\week2_assignment\\Backend\\Default.aspx.cs",
+              "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\W2\\week2_assignment\\week2_assignment\\Backend\\Default.aspx.cs",
               "RelativeDocumentMoniker": "week2_assignment\\Backend\\Default.aspx.cs",
-              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\week2_assignment\\week2_assignment\\Backend\\Default.aspx.cs",
+              "ToolTip": "X:\\projects\\t4\\SE 256 - web development\\W2\\week2_assignment\\week2_assignment\\Backend\\Default.aspx.cs",
               "RelativeToolTip": "week2_assignment\\Backend\\Default.aspx.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABcAAABBAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-23T11:47:07.18Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Default.aspx",
-              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\week2_assignment\\week2_assignment\\Backend\\Default.aspx",
+              "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\W2\\week2_assignment\\week2_assignment\\Backend\\Default.aspx",
               "RelativeDocumentMoniker": "week2_assignment\\Backend\\Default.aspx",
-              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\week2_assignment\\week2_assignment\\Backend\\Default.aspx",
+              "ToolTip": "X:\\projects\\t4\\SE 256 - web development\\W2\\week2_assignment\\week2_assignment\\Backend\\Default.aspx",
               "RelativeToolTip": "week2_assignment\\Backend\\Default.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",

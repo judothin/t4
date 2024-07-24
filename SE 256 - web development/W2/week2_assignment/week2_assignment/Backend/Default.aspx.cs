@@ -19,7 +19,7 @@ namespace week2_assignment.Backend
             if (txtUname.Text == "Scott" && txtPW.Text == "NEIT")
             {
                 Session["Uname"] = txtUname.Text;
-                Session["LoggedIn"] = true;
+                Session["LoggedIn"] = "true";
                 lblFeedback.Text = "Login Successful!";
                 Response.Redirect("~/Backend/ControlPanel.aspx");
             }
@@ -27,7 +27,7 @@ namespace week2_assignment.Backend
             else 
             {
                 Session["Uname"] = "";
-                Session["LoggedIn"] = false;
+                Session["LoggedIn"] = "false";
                 lblFeedback.Text = "Login Failed!";
             }
         }

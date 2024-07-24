@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ControlPanel.aspx.cs" Inherits="week2_assignment.Backend.WebForm2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ControlPanel.aspx.cs" Inherits="week2_assignment.Backend.ControlPanel" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="BreakingNewsContent" runat="server">
 
 

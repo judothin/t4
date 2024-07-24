@@ -11,7 +11,7 @@ namespace week2_assignment.Backend
 {
 
 
-    public partial class WebForm2
+    public partial class ControlPanel
     {
 
         /// <summary>
