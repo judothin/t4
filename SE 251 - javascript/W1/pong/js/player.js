@@ -6,6 +6,6 @@ class Player {
         this.highscore = 0;
         this.pad = new Box();
     }
-    
+
 }
 
