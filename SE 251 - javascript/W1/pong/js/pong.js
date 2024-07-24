@@ -15,7 +15,6 @@ p1.h = 150
 p1.x = 0 + p1.w/2
 p1.color = `purple`
 
-
 //ball setup
 var ball = new Box();
 ball.w = 20
@@ -31,109 +30,77 @@ p2.h = 150
 p2.x = c.width - p2.w/2
 p2.color = `purple`
 
-function main()
-{
-    //erases the canvas
-    ctx.clearRect(0,0,c.width,c.height)
+function main() {
+    // Erase the canvas
+    ctx.clearRect(0, 0, c.width, c.height);
 
-    //p1 accelerates when key is pressed 
-    if(keys[`w`])
-    {
-       p1.vy += -p1.force
+    // Player 1 controls and movement
+    if (keys[`w`]) {
+        p1.vy += -p1.force;
     }
-
-    if(keys[`s`])
-    {
-        p1.vy += p1.force
+    if (keys[`s`]) {
+        p1.vy += p1.force;
     }
-    //applies friction
-    p1.vy *= fy
-    //player movement
-    p1.move();
+    p1.vy *= fy; // Apply friction
+    p1.move(); // Player 1 movement
 
-    //ball movement
-    ball.move()
-
-    //p1 collision
-    if(p1.y < 0+p1.h/2)
-    {
-        p1.y = 0+p1.h/2
+    // Player 1 collision with canvas boundaries
+    if (p1.y < 0 + p1.h / 2) {
+        p1.y = 0 + p1.h / 2;
     }
-    if(p1.y > c.height-p1.h/2)
-    {
-        p1.y = c.height-p1.h/2
+    if (p1.y > c.height - p1.h / 2) {
+        p1.y = c.height - p1.h / 2;
     }
 
-    //ball collision 
-    if(ball.x < 0)
-    {
-        ball.x = c.width/2
-        ball.y  =c.height/2
+    // Player 2 controls and movement
+    if (keys[`o`]) {
+        p2.vy += -p2.force;
     }
-    // ball collision with the right side
-    if(ball.x > c.width) {
-        ball.x = c.width/2;
-        ball.y = c.height/2;
+    if (keys[`l`]) {
+        p2.vy += p2.force;
     }
-    //---------------------------
-    if(ball.x > c.width)
-    {
-        ball.x = c.width
-        ball.vx = -ball.vx
+    p2.vy *= fy; // Apply friction
+    p2.move(); // Player 2 movement
+
+    // Player 2 collision with canvas boundaries
+    if (p2.y < 0 + p2.h / 2) {
+        p2.y = 0 + p2.h / 2;
     }
-    if(ball.y < 0)
-    {
-        ball.y = 0
-        ball.vy = -ball.vy
-    }
-    if(ball.y > c.height)
-    {
-        ball.y = c.height
-        ball.vy = -ball.vy
-       
+    if (p2.y > c.height - p2.h / 2) {
+        p2.y = c.height - p2.h / 2;
     }
 
-    //p1 with ball collision
+    // Ball movement
+    ball.move();
+
+    // Ball collision with canvas boundaries
+    if (ball.x < 0 || ball.x > c.width) {
+        ball.x = c.width / 2;
+        ball.y = c.height / 2;
+    }
+    if (ball.y < 0) {
+        ball.y = 0;
+        ball.vy = -ball.vy;
+    }
+    if (ball.y > c.height) {
+        ball.y = c.height;
+        ball.vy = -ball.vy;
+    }
+
+    // Ball collision with players
     if (ball.collide(p1)) {
         ball.x = p1.x + p1.w / 2 + ball.w / 2;
         ball.vx = -ball.vx;
         applyShakeEffect(p1);
     }
-
-    //draw the objects
-    p1.draw()
-    ball.draw()
-
-    // p2 acceleration
-    if(keys[`o`])
-    {
-        p2.vy += -p2.force
-    }
-    if(keys[`l`])
-    {
-        p2.vy += p2.force
-    }
-    // p2 friction
-    p2.vy *= fy
-    // p2 movement
-    p2.move()
-    // p2 collision
-    if(p2.y < 0+p2.h/2)
-    {
-        p2.y = 0+p2.h/2
-    }
-    if(p2.y > c.height-p2.h/2)
-    {
-        p2.y = c.height-p2.h/2
-    }
-    // p2 with ball collision
     if (ball.collide(p2)) {
         ball.x = p2.x - p2.w / 2 - ball.w / 2;
         ball.vx = -ball.vx;
         applyShakeEffect(p2);
     }
-    // draw p2
-    p2.draw()
 
+    // Draw the objects
+    p1.draw();
+    p2.draw();
+    ball.draw();
 }
-
