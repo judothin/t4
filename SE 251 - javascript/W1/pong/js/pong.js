@@ -39,10 +39,18 @@ ball.vx = -5;
 ball.vy = -5;
 ball.color = `black`;
 
+// Player scores
+let playerScores = [0, 0]; // Initialize scores for both players
 
 function main() {
     // Erase the canvas
     ctx.clearRect(0, 0, c.width, c.height);
+
+    // Draw the scores
+    ctx.font = "30px Arial";
+    ctx.fillStyle = "white";
+    ctx.fillText(`Player 1: ${playerScores[0]}`, 50, 50);
+    ctx.fillText(`Player 2: ${playerScores[1]}`, c.width - 200, 50);
 
     // Player 1 controls and movement
     if (keys[`w`]) {
@@ -84,10 +92,7 @@ function main() {
     ball.move();
 
     // Ball collision with canvas boundaries
-    if (ball.x < 0 || ball.x > c.width) {
-        ball.x = c.width / 2;
-        ball.y = c.height / 2;
-    }
+    
     if (ball.y < 0) {
         ball.y = 0;
         ball.vy = -ball.vy;
@@ -96,6 +101,20 @@ function main() {
         ball.y = c.height;
         ball.vy = -ball.vy;
     }
+
+    // Score
+    if (ball.x < 0) {
+            playerScores[1]++; // Increment player[1]'s score
+            ball.x = c.width / 2;
+            ball.y = c.height / 2;
+            console.log(`${playerScores[0]} | ${playerScores[1]}`);
+        }
+    if (ball.x > c.width) {
+            playerScores[0]++; // Increment player[0]'s score
+            ball.x = c.width / 2;
+            ball.y = c.height / 2;
+            console.log(`${playerScores[0]} | ${playerScores[1]}`);
+        }
 
     // Ball collision with players
     if (ball.collide(pad[0])) {
