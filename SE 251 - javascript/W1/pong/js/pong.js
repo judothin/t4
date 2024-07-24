@@ -18,18 +18,14 @@ var pad = [];
 pad[0] = player[0].pad;
 pad[1] = player[1].pad;
 
-// Player 1 setup
-pad[0].w = 20;
-pad[0].h = 150;
-pad[0].x = player[0].pad.w / 2;
-pad[0].y = c.height / 2;
-pad[0].color = `purple`;
-
-// Player 2 setup
-pad[1].w = 20;
-pad[1].h = 150;
-pad[1].x = c.width - player[1].pad.w / 2;
-pad[1].color = `purple`;
+// Player setup
+for (let i = 0; i < pad.length; i++) {
+    pad[i].w = 20;
+    pad[i].h = 150;
+    pad[i].x = i === 0 ? pad[i].w / 2 : c.width - pad[i].w / 2;
+    pad[i].y = c.height / 2;
+    pad[i].color = `purple`;
+}
 
 // Ball setup
 var ball = new Box();
@@ -55,86 +51,76 @@ function main() {
     ctx.fillText(`Player 1: ${playerScores[0]}`, 50, 50);
     ctx.fillText(`Player 2: ${playerScores[1]}`, c.width - 200, 50);
 
-    // Player 1 controls and movement
-    if (keys[`w`]) {
-        pad[0].vy += -pad[0].force;
-    }
-    if (keys[`s`]) {
-        pad[0].vy += pad[0].force;
-    }
-    pad[0].vy *= fy; // Apply friction
-    pad[0].move(); // Player 1 movement
+    // Player controls and movement
+    const controls = [['w', 's'], ['o', 'l']];
+    
+    for (let i = 0; i < pad.length; i++) {
+        if (keys[controls[i][0]]) {
+            pad[i].vy += -pad[i].force;
+        }
+        if (keys[controls[i][1]]) {
+            pad[i].vy += pad[i].force;
+        }
+        pad[i].vy *= fy; // Apply friction
+        pad[i].move(); // Player movement
 
-    // Player 1 collision with canvas boundaries
-    if (pad[0].y < 0 + pad[0].h / 2) {
-        pad[0].y = 0 + pad[0].h / 2;
-    }
-    if (pad[0].y > c.height - pad[0].h / 2) {
-        pad[0].y = c.height - pad[0].h / 2;
-    }
-
-    // Player 2 controls and movement
-    if (keys[`o`]) {
-        pad[1].vy += -pad[1].force;
-    }
-    if (keys[`l`]) {
-        pad[1].vy += pad[1].force;
-    }
-    pad[1].vy *= fy; // Apply friction
-    pad[1].move(); // Player 2 movement
-
-    // Player 2 collision with canvas boundaries
-    if (pad[1].y < 0 + pad[1].h / 2) {
-        pad[1].y = 0 + pad[1].h / 2;
-    }
-    if (pad[1].y > c.height - pad[1].h / 2) {
-        pad[1].y = c.height - pad[1].h / 2;
+        // Player collision with canvas boundaries
+        if (pad[i].y < 0 + pad[i].h / 2) {
+            pad[i].y = 0 + pad[i].h / 2;
+        }
+        if (pad[i].y > c.height - pad[i].h / 2) {
+            pad[i].y = c.height - pad[i].h / 2;
+        }
     }
 
     // Ball movement
     ball.move();
 
     // Ball collision with canvas boundaries
-    
-    if (ball.y < 0) {
-        ball.y = 0;
-        ball.vy = -ball.vy;
-    }
-    if (ball.y > c.height) {
-        ball.y = c.height;
-        ball.vy = -ball.vy;
+    const boundaries = [
+        { axis: 'y', limit: 0, condition: ball.y < 0 },
+        { axis: 'y', limit: c.height, condition: ball.y > c.height }
+    ];
+
+    for (let i = 0; i < boundaries.length; i++) {
+        if (boundaries[i].condition) {
+            ball[boundaries[i].axis] = boundaries[i].limit;
+            ball.vy = -ball.vy;
+        }
     }
 
     // Score
     if (ball.x < 0) {
-            playerScores[1]++; // Increment player[1]'s score
-            ball.x = c.width / 2;
-            ball.y = c.height / 2;
-            console.log(`${playerScores[0]} | ${playerScores[1]}`);
-        }
+        playerScores[1]++; // Increment player[1]'s score
+        ball.x = c.width / 2;
+        ball.y = c.height / 2;
+        console.log(`${playerScores[0]} | ${playerScores[1]}`);
+    }
     if (ball.x > c.width) {
-            playerScores[0]++; // Increment player[0]'s score
-            ball.x = c.width / 2;
-            ball.y = c.height / 2;
-            console.log(`${playerScores[0]} | ${playerScores[1]}`);
-        }
+        playerScores[0]++; // Increment player[0]'s score
+        ball.x = c.width / 2;
+        ball.y = c.height / 2;
+        console.log(`${playerScores[0]} | ${playerScores[1]}`);
+    }
 
     // Ball collision with players
-    if (ball.collide(pad[0])) {
-        ball.x = pad[0].x + pad[0].w / 2 + ball.w / 2;
-        ball.vx = -ball.vx;
-        applyShakeEffect(pad[0]);
-    }
-    if (ball.collide(pad[1])) {
-        ball.x = pad[1].x - pad[1].w / 2 - ball.w / 2;
-        ball.vx = -ball.vx;
-        applyShakeEffect(pad[1]);
+    for (let i = 0; i < pad.length; i++) {
+        if (ball.collide(pad[i])) {
+            if (i === 0) {
+                ball.x = pad[i].x + pad[i].w / 2 + ball.w / 2;
+            } else {
+                ball.x = pad[i].x - pad[i].w / 2 - ball.w / 2;
+            }
+            ball.vx = -ball.vx;
+            applyShakeEffect(pad[i]);
+        }
     }
 
     // Draw the objects
-    pad[0].draw();
-    pad[1].draw();
-    ball.draw();
+    for (let i = 0; i < pad.length; i++) {
+        pad[i].draw();
+        ball.draw();
+    }
 
     // Update the scores in the HTML
     for (let i = 0; i < scoreDivs.length; i++) {
