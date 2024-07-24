@@ -40,7 +40,10 @@ ball.vy = -5;
 ball.color = `black`;
 
 // Player scores
-let playerScores = [0, 0]; // Initialize scores for both players
+var playerScores = [0, 0];
+
+// Get the divs from the HTML
+var scoreDivs = document.querySelectorAll('#score div');
 
 function main() {
     // Erase the canvas
@@ -132,4 +135,9 @@ function main() {
     pad[0].draw();
     pad[1].draw();
     ball.draw();
+
+    // Update the scores in the HTML
+    for (let i = 0; i < scoreDivs.length; i++) {
+        scoreDivs[i].innerText = `Player ${i + 1}: ${playerScores[i]}`;
+    }
 }
