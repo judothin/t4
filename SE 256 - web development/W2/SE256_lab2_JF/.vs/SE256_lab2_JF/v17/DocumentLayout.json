@@ -1,0 +1,184 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|c:\\projects\\t4\\se 256 - web development\\w2\\se256_lab2_jf\\se256_lab2_jf\\backend\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|solutionrelative:se256_lab2_jf\\backend\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\se256_lab2_jf\\backend\\controlpanel.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|solutionrelative:se256_lab2_jf\\backend\\controlpanel.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\se256_lab2_jf\\backend\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|solutionrelative:se256_lab2_jf\\backend\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\se256_lab2_jf\\backend\\controlpanel.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|solutionrelative:se256_lab2_jf\\backend\\controlpanel.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\se256_lab2_jf\\featured.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|solutionrelative:se256_lab2_jf\\featured.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\se256_lab2_jf\\about.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|solutionrelative:se256_lab2_jf\\about.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\se256_lab2_jf\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|solutionrelative:se256_lab2_jf\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\se256_lab2_jf\\contact.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|solutionrelative:se256_lab2_jf\\contact.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\se256_lab2_jf\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|solutionrelative:se256_lab2_jf\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\se256_lab2_jf\\site.master.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD53982B-DBB5-4845-9724-E0AB5DA9E418}|SE256_lab2_JF\\SE256_lab2_JF.csproj|solutionrelative:se256_lab2_jf\\site.master.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ControlPanel.aspx.cs",
+              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\Backend\\ControlPanel.aspx.cs",
+              "RelativeDocumentMoniker": "SE256_lab2_JF\\Backend\\ControlPanel.aspx.cs",
+              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\Backend\\ControlPanel.aspx.cs",
+              "RelativeToolTip": "SE256_lab2_JF\\Backend\\ControlPanel.aspx.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T13:19:15.899Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ControlPanel.aspx",
+              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\Backend\\ControlPanel.aspx",
+              "RelativeDocumentMoniker": "SE256_lab2_JF\\Backend\\ControlPanel.aspx",
+              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\Backend\\ControlPanel.aspx",
+              "RelativeToolTip": "SE256_lab2_JF\\Backend\\ControlPanel.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-07-25T13:03:00.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Default.aspx.cs",
+              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\Backend\\Default.aspx.cs",
+              "RelativeDocumentMoniker": "SE256_lab2_JF\\Backend\\Default.aspx.cs",
+              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\Backend\\Default.aspx.cs",
+              "RelativeToolTip": "SE256_lab2_JF\\Backend\\Default.aspx.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T12:11:02.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Default.aspx",
+              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\Backend\\Default.aspx",
+              "RelativeDocumentMoniker": "SE256_lab2_JF\\Backend\\Default.aspx",
+              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\Backend\\Default.aspx",
+              "RelativeToolTip": "SE256_lab2_JF\\Backend\\Default.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-07-25T12:10:31.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Featured.aspx",
+              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\Featured.aspx",
+              "RelativeDocumentMoniker": "SE256_lab2_JF\\Featured.aspx",
+              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\Featured.aspx",
+              "RelativeToolTip": "SE256_lab2_JF\\Featured.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-07-25T11:46:07.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Contact.aspx",
+              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\Contact.aspx",
+              "RelativeDocumentMoniker": "SE256_lab2_JF\\Contact.aspx",
+              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\Contact.aspx",
+              "RelativeToolTip": "SE256_lab2_JF\\Contact.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-07-25T11:42:07.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Site.Master",
+              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\Site.Master",
+              "RelativeDocumentMoniker": "SE256_lab2_JF\\Site.Master",
+              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\Site.Master",
+              "RelativeToolTip": "SE256_lab2_JF\\Site.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-07-25T11:36:51.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "About.aspx",
+              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\About.aspx",
+              "RelativeDocumentMoniker": "SE256_lab2_JF\\About.aspx",
+              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\About.aspx",
+              "RelativeToolTip": "SE256_lab2_JF\\About.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-07-25T11:32:04.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Default.aspx",
+              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\Default.aspx",
+              "RelativeDocumentMoniker": "SE256_lab2_JF\\Default.aspx",
+              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\Default.aspx",
+              "RelativeToolTip": "SE256_lab2_JF\\Default.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-07-25T11:24:02.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Site.Master.designer.cs",
+              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\Site.Master.designer.cs",
+              "RelativeDocumentMoniker": "SE256_lab2_JF\\Site.Master.designer.cs",
+              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W2\\SE256_lab2_JF\\SE256_lab2_JF\\Site.Master.designer.cs",
+              "RelativeToolTip": "SE256_lab2_JF\\Site.Master.designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T11:56:25.266Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
