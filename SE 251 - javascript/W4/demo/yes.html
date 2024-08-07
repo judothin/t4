@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p data-age="22">Jayden Fagre</p> <!-- when used in java "data-age" is used like "dataset.age" -->
+    
+
+    <script>
+        var p = document.querySelector('p');
+        
+        (function junk(){
+            p.innerHTML = 'Hello';
+        })();
+
+        // self invokes by putting () at the end of the function
+
+        class dude {
+        constructor() {
+            this.height = 6;
+            this.weight = 200;
+        }
+        display(element) {
+            element.innerHTML = this.height;
+            return this;
+        }
+        red(element) {
+            element.style.color = 'red';
+        }
+    }
+
+    var me = new dude();
+    me.display(p).red(p);
+
+    </script>
+</body>
+</html>
