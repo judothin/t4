@@ -33,6 +33,20 @@ document.getElementById('player2Fill').addEventListener('input', function(event)
     updatePlayerColor(1, event.target.value);
 });
 
+// update stroke color
+function updateStrokeColor(color) {
+    console.log(`Updating stroke color to ${color}`);
+    pad.forEach(paddle => paddle.setProps({ stroke: color }));
+}
+
+// event listener for stroke color input
+document.getElementById('p1strokeColor').addEventListener('input', function(event) {
+    updateStrokeColor(event.target.value);
+});
+document.getElementById('p2strokeColor').addEventListener('input', function(event) {
+    updateStrokeColor(event.target.value);
+});
+
 
 /*---------
     Program the six key inputs to do the following:
@@ -84,6 +98,45 @@ function updatePlayerUpKey(playerIndex, key) {
   });
 
 
+  // straight key update
+function updatePlayerStraightKey(playerIndex, key) {
+    console.log(`Updating player ${playerIndex + 1} straight key to ${key}`);
+
+    player[playerIndex].setProps({
+      keys: {
+        u: player[playerIndex].keys.u,
+        d: player[playerIndex].keys.d,
+        s: key
+      }
+    });
+  }
+// event listeners for player straight key inputs
+document.getElementById('player1S').addEventListener('keydown', function(event) {
+    updatePlayerStraightKey(0, event.key);
+});
+document.getElementById('player2S').addEventListener('keydown', function(event) {
+    updatePlayerStraightKey(1, event.key);
+});
+
+
+  
+// height adjustment
+function updatePlayerHeight(playerIndex, height) {
+    console.log(`Updating player ${playerIndex + 1} height to ${height}`);
+    player[playerIndex].setProps({ h: height });
+    pad[playerIndex].setProps({ h: height });
+}
+
+// event listeners for player height inputs
+document.getElementById('player1Height').addEventListener('input', function(event) {
+    updatePlayerHeight(0, event.target.value);
+});
+document.getElementById('player2Height').addEventListener('input', function(event) {
+    updatePlayerHeight(1, event.target.value);
+});
+
+
+
 // pause and resume functionality
 const pauseGame = () => {
     gamePaused = true;
@@ -96,7 +149,10 @@ const resumeGame = () => {
 };
 
 // get all inputs that should pause the game
-const pauseInputs = document.querySelectorAll('#player1Up, #player1Down, #player2Up, #player2Down, #player1Fill, #player2Fill');
+const pauseInputs = document.querySelectorAll
+(
+    '#player1Up, #player1Down, #player2Up, #player2Down, #player1Fill, #player2Fill, #p1strokeColor, #p2strokeColor, #player1S, #player2S'
+);
 
 // add event listeners to pause and resume the game
 pauseInputs.forEach(input => {
