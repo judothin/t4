@@ -4,20 +4,10 @@
     . show or hide the `.sides` div
 ---------*/
     
-    document.querySelector(`#hide`).addEventListener(`click`, function(){
-    
-        document.querySelector(`.sides`).classList.toggle(`hidden`);
-    
-});
-
-    document.querySelector(`#unhide`).addEventListener(`click`, function(){
-        
-            document.querySelector(`.sides`).classList.toggle(`hidden`);
-    
+document.querySelector('#unhide').addEventListener('click', function() {
+    document.querySelector('.sides').classList.toggle('hidden');
 });
     
-
-
 /*---------
     Program the two fill inputs to do the following:
     . Display the correct colors on the inputs and outputs and paddles    
@@ -27,13 +17,21 @@
         . Show the fill's hex code in the output div 
 -----------*/
 
-var fill = document.querySelector(`.fill`);
-
-fill.addEventListener('input'), function(){
-        player.fill = fill.value;
-        pad.fill = player.fill;
-        document.querySelector(`#output`).textContent = fill.value;
+// Function to update player color
+function updatePlayerColor(playerIndex, color) {
+    console.log(`Updating player ${playerIndex + 1} color to ${color}`);
+    player[playerIndex].setProps({ fill: color });
+    pad[playerIndex].setProps({ fill: color });
 }
+
+// Add event listeners to color pickers
+document.getElementById('player1Fill').addEventListener('input', function(event) {
+    updatePlayerColor(0, event.target.value);
+});
+
+document.getElementById('player2Fill').addEventListener('input', function(event) {
+    updatePlayerColor(1, event.target.value);
+});
 
 
 /*---------
