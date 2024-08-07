@@ -25,8 +25,16 @@
         . Change the player's fill property to the value of the input
         . Change the pad's fill property  to the player's fill property
         . Show the fill's hex code in the output div 
-
 -----------*/
+
+var fill = document.querySelector(`.fill`);
+
+fill.addEventListener('input'), function(){
+        player.fill = fill.value;
+        pad.fill = player.fill;
+        document.querySelector(`#output`).textContent = fill.value;
+}
+
 
 /*---------
     Program the six key inputs to do the following:
