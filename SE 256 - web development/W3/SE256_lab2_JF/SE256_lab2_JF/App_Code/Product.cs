@@ -14,15 +14,15 @@ namespace SE256_lab2_JF.App_Code
         public List<string> Errors { get; private set; } = new List<string>();
 
         public Product
-        (
+(
             string name,
             string manufacturer,
             DateTime dateExpires,
             double price
-        )
+)
         {
             Name = name;
-            Manufacturer = Manufacturer;
+            Manufacturer = manufacturer;
             DateExpires = dateExpires;
             Price = price;
         }

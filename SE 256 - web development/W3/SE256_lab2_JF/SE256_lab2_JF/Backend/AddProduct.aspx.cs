@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SE256_lab2_JF.App_Code;
+using System.Data.SqlClient;
+
 
 namespace SE256_lab2_JF.Backend
 {
@@ -45,13 +47,40 @@ namespace SE256_lab2_JF.Backend
             if (product.HasErrors())
             {
                 feedback_label.Text = product.GetFeedback();
+                return;
             }
-            else
+
+            // Database connection string
+            string connectionString = "Server=sql.neit.edu,4500;Database=Dev_202430_JFagre;User Id=Dev_202430_JFagre;Password=008024602;Encrypt=True;TrustServerCertificate=True;";
+
+            try
             {
-                feedback_label.Text = "Product added successfully!";
-                // You can add additional logic here to save the product to a database or further process it
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string query = "INSERT INTO Products_t4 (Name, Manufacturer, DateExpires, Price) " +
+                                   "VALUES (@Name, @Manufacturer, @DateExpires, @Price)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Name", product.Name);
+                        cmd.Parameters.AddWithValue("@Manufacturer", product.Manufacturer);
+                        cmd.Parameters.AddWithValue("@DateExpires", product.DateExpires);
+                        cmd.Parameters.AddWithValue("@Price", product.Price);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    feedback_label.Text = "Product added successfully!";
+                }
+            }
+            catch (Exception ex)
+            {
+                feedback_label.Text = "An error occurred: " + ex.Message;
             }
         }
+
 
     }
 }
