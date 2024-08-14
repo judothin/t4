@@ -36,7 +36,6 @@ namespace SE256_activity_3_JaydenF.Backend
             dgResults.DataSource = results;
             dgResults.DataBind();
 
-            // Optionally, display a message if no results are found
             if (results.Count == 0)
             {
                 feedback_label.Text = "No books found matching the search criteria.";

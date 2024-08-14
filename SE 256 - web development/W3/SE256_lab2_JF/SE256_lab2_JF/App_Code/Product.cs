@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace SE256_lab2_JF.App_Code
 {
@@ -110,5 +111,133 @@ namespace SE256_lab2_JF.App_Code
                     $"Price: ${this.Price}\n";
         }
 
+        public class ProductSearchResult
+        {
+            private readonly string _connectionString = "Server=sql.neit.edu,4500;Database=Dev_202430_JFagre;User Id=Dev_202430_JFagre;Password=008024602;Encrypt=True;TrustServerCertificate=True;";
+
+            public List<Product> SearchProducts(string name, string manufacturer)
+            {
+                List<Product> products = new List<Product>();
+
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(_connectionString))
+                    {
+                        conn.Open();
+                        // Sql search query
+                        string query = "SELECT Id, Name, Manufacturer, DateExpires, Price FROM Products_t4 WHERE 1=1";
+
+                        if (!string.IsNullOrEmpty(name))
+                        {
+                            query += " AND Name LIKE @Name";
+                        }
+
+                        if (!string.IsNullOrEmpty(manufacturer))
+                        {
+                            query += " AND Manufacturer LIKE @Manufacturer";
+                        }
+
+                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        {
+                            if (!string.IsNullOrEmpty(name))
+                            {
+                                cmd.Parameters.AddWithValue("@Name", "%" + name + "%");
+                            }
+
+                            if (!string.IsNullOrEmpty(manufacturer))
+                            {
+                                cmd.Parameters.AddWithValue("@Manufacturer", "%" + manufacturer + "%");
+                            }
+
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    Product product = new Product(
+                                        reader["Name"].ToString(),
+                                        reader["Manufacturer"].ToString(),
+                                        Convert.ToDateTime(reader["DateExpires"]),
+                                        Convert.ToDouble(reader["Price"])
+
+                                    );
+
+                                    product.Id = Convert.ToInt32(reader["Id"]);
+
+                                    products.Add(product);
+                                }
+                            }
+
+                        }
+                    }
+                }
+                // Catch any errors (gives specifics)
+                catch (Exception ex)
+                {
+                    throw new Exception("An error occurred while searching for products: " + ex.Message + " | StackTrace: " + ex.StackTrace);
+                }
+
+                return products;
+            }
+
+            // Grab the product id
+            public Product GetProductById(int id)
+            {
+                Product product = null;
+
+                string query = "SELECT Id, Name, Manufacturer, DateExpires, Price FROM Products_t4 WHERE Id = @Id";
+
+                using (SqlConnection conn = new SqlConnection(_connectionString))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Id", id);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                product = new Product(
+                                    reader["Name"].ToString(),
+                                    reader["Manufacturer"].ToString(),
+                                    Convert.ToDateTime(reader["DateExpires"]),
+                                    Convert.ToDouble(reader["Price"])
+                                );
+                                product.Id = id;
+                            }
+                        }
+                    }
+                }
+
+                return product;
+            }
+
+            // Update the product
+            public void UpdateProduct(Product product)
+            {
+                string query = "UPDATE Products_t4 SET Name = @Name, Manufacturer = @Manufacturer, DateExpires = @DateExpires, Price = @Price WHERE Id = @Id";
+
+                using (SqlConnection conn = new SqlConnection(_connectionString))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Name", product.Name);
+                        cmd.Parameters.AddWithValue("@Manufacturer", product.Manufacturer);
+                        cmd.Parameters.AddWithValue("@DateExpires", product.DateExpires);
+                        cmd.Parameters.AddWithValue("@Price", product.Price);
+                        cmd.Parameters.AddWithValue("@Id", product.Id);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+
+
+
+        }
+
     }
-}
+    }

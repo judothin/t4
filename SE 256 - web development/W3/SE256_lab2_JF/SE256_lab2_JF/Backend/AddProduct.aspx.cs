@@ -14,14 +14,35 @@ namespace SE256_lab2_JF.Backend
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            if (!IsPostBack)
+            {
+                if (Request.QueryString["Id"] != null)
+                {
+                    int productId = Convert.ToInt32(Request.QueryString["Id"]);
+                    LoadProductDetails(productId);
+                }
+            }
+        }
+
+        private void LoadProductDetails(int id)
+        {
+            Product.ProductSearchResult productSearch = new Product.ProductSearchResult();
+            Product product = productSearch.GetProductById(id);
+
+            if (product != null)
+            {
+                txtName.Text = product.Name;
+                txtManufacturer.Text = product.Manufacturer;
+                date_Expires.SelectedDate = product.DateExpires;
+                txtPrice.Text = product.Price.ToString();
+            }
         }
 
         protected void submit_button_click(object sender, EventArgs e)
         {
             // Validate the price input
             double priceValue;
-            if (string.IsNullOrEmpty(price.Text) || !double.TryParse(price.Text, out priceValue))
+            if (string.IsNullOrEmpty(txtPrice.Text) || !double.TryParse(txtPrice.Text, out priceValue))
             {
                 feedback_label.Text = "Please enter a valid price.";
                 return;
@@ -35,22 +56,19 @@ namespace SE256_lab2_JF.Backend
                 return;
             }
 
-            // Create a new Product instance
             Product product = new Product(
-                name.Text,
-                manufacturer.Text,
-                dateExpires,
+                txtName.Text,
+                txtManufacturer.Text,
+                date_Expires.SelectedDate,
                 priceValue
             );
 
-            // Check for any validation errors
             if (product.HasErrors())
             {
                 feedback_label.Text = product.GetFeedback();
                 return;
             }
 
-            // Database connection string
             string connectionString = "Server=sql.neit.edu,4500;Database=Dev_202430_JFagre;User Id=Dev_202430_JFagre;Password=008024602;Encrypt=True;TrustServerCertificate=True;";
 
             try
@@ -80,6 +98,30 @@ namespace SE256_lab2_JF.Backend
                 feedback_label.Text = "An error occurred: " + ex.Message;
             }
         }
+
+        protected void update_button_Click(object sender, EventArgs e)
+        {
+            string name = txtName.Text;
+            string manufacturer = txtManufacturer.Text;
+            DateTime dateExpires = date_Expires.SelectedDate;
+            double price = double.Parse(txtPrice.Text);
+
+            Product updatedProduct = new Product(
+                name,
+                manufacturer,
+                dateExpires,
+                price
+            );
+
+            updatedProduct.Id = int.Parse(Request.QueryString["Id"]);
+
+            Product.ProductSearchResult productSearchResultInstance = new Product.ProductSearchResult();
+            productSearchResultInstance.UpdateProduct(updatedProduct);
+
+            feedback_label.Text = "Book updated successfully!";
+        }
+
+
 
 
     }

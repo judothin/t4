@@ -14,12 +14,12 @@
 
     <tr>
         <td>Product name</td>
-        <td><asp:TextBox ID="name" runat="server" MaxLength="255" /></td>
+        <td><asp:TextBox ID="txtName" runat="server" MaxLength="255" /></td>
     </tr>
     
     <tr>
         <td>Manufacturer</td>
-        <td><asp:TextBox ID="manufacturer" runat="server" MaxLength="20" /></td>
+        <td><asp:TextBox ID="txtManufacturer" runat="server" MaxLength="20" /></td>
     </tr>
 
     <tr>
@@ -29,9 +29,10 @@
 
     <tr>
         <td>Price</td>
-        <td><asp:TextBox ID="price" runat="server" MaxLength="5" /></td>
+        <td><asp:TextBox ID="txtPrice" runat="server" MaxLength="5" /></td>
     </tr>
 </table>
 <asp:Button ID="submit_button" runat="server" Text="Add" OnClick="submit_button_click" />
+<asp:Button ID="update_button" runat="server" Text="Update" OnClick="update_button_Click" />
 <asp:Label ID="feedback_label" runat="server" />
 </asp:Content>

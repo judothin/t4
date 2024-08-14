@@ -12,6 +12,9 @@
                 <td><a href="AddProduct.aspx" runat="server">Add a New Product</a></td>
             </tr>
             <tr>
+                <td><a href="SearchProduct.aspx" runat="server">Search a Product</a></td>
+            </tr>
+            <tr>
                 <td><asp:Button ID="logout_button" runat="server" Text="Log Out" OnClick="btnLogout_Click" /></td>
             </tr>
         </table>

@@ -1,58 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\",
+  "WorkspaceRootPath": "X:\\projects\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|c:\\projects\\t4\\se 256 - web development\\w3\\se256_activity_3_jaydenf\\se256_activity_3_jaydenf\\backend\\ebookmanager.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|solutionrelative:se256_activity_3_jaydenf\\backend\\ebookmanager.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\se256_activity_3_jaydenf\\backend\\booksearch.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|solutionrelative:se256_activity_3_jaydenf\\backend\\booksearch.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\se256_activity_3_jaydenf\\app_code\\validationlibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|solutionrelative:se256_activity_3_jaydenf\\app_code\\validationlibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\se256_activity_3_jaydenf\\app_code\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|X:\\projects\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\se256_activity_3_jaydenf\\app_code\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|solutionrelative:se256_activity_3_jaydenf\\app_code\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\se256_activity_3_jaydenf\\backend\\ebookmanager.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|x:\\projects\\t4\\se 256 - web development\\w3\\se256_activity_3_jaydenf\\se256_activity_3_jaydenf\\backend\\ebookmanager.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|solutionrelative:se256_activity_3_jaydenf\\backend\\ebookmanager.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|X:\\projects\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\se256_activity_3_jaydenf\\backend\\ebookmanager.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|solutionrelative:se256_activity_3_jaydenf\\backend\\ebookmanager.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\se256_activity_3_jaydenf\\backend\\booksearch.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|X:\\projects\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\se256_activity_3_jaydenf\\backend\\booksearch.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|solutionrelative:se256_activity_3_jaydenf\\backend\\booksearch.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|X:\\projects\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\se256_activity_3_jaydenf\\backend\\booksearch.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|solutionrelative:se256_activity_3_jaydenf\\backend\\booksearch.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\se256_activity_3_jaydenf\\backend\\controlpanel.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|solutionrelative:se256_activity_3_jaydenf\\backend\\controlpanel.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\se256_activity_3_jaydenf\\backend\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|solutionrelative:se256_activity_3_jaydenf\\backend\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\se256_activity_3_jaydenf\\about.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|solutionrelative:se256_activity_3_jaydenf\\about.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\se256_activity_3_jaydenf\\backend\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|solutionrelative:se256_activity_3_jaydenf\\backend\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\se256_activity_3_jaydenf\\backend\\controlpanel.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|solutionrelative:se256_activity_3_jaydenf\\backend\\controlpanel.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\se256_activity_3_jaydenf\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|solutionrelative:se256_activity_3_jaydenf\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\se256_activity_3_jaydenf\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
-      "RelativeMoniker": "D:0:0:{C95DF28F-FE67-456C-92D3-F98CA4425AC8}|SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF.csproj|solutionrelative:se256_activity_3_jaydenf\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,168 +34,65 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BookSearch.aspx",
-              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\BookSearch.aspx",
-              "RelativeDocumentMoniker": "SE256_activity_3_JaydenF\\Backend\\BookSearch.aspx",
-              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\BookSearch.aspx",
-              "RelativeToolTip": "SE256_activity_3_JaydenF\\Backend\\BookSearch.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-13T12:21:40.198Z",
+              "DocumentIndex": 1,
+              "Title": "EbookManager.aspx.cs",
+              "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\EbookManager.aspx.cs",
+              "RelativeDocumentMoniker": "SE256_activity_3_JaydenF\\Backend\\EbookManager.aspx.cs",
+              "ToolTip": "X:\\projects\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\EbookManager.aspx.cs",
+              "RelativeToolTip": "SE256_activity_3_JaydenF\\Backend\\EbookManager.aspx.cs",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAwwGIAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T16:21:30.432Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ValidationLibrary.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\App_Code\\ValidationLibrary.cs",
-              "RelativeDocumentMoniker": "SE256_activity_3_JaydenF\\App_Code\\ValidationLibrary.cs",
-              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\App_Code\\ValidationLibrary.cs",
-              "RelativeToolTip": "SE256_activity_3_JaydenF\\App_Code\\ValidationLibrary.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAkwB4AAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T15:13:04.782Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BookSearch.aspx.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\BookSearch.aspx.cs",
-              "RelativeDocumentMoniker": "SE256_activity_3_JaydenF\\Backend\\BookSearch.aspx.cs",
-              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\BookSearch.aspx.cs",
-              "RelativeToolTip": "SE256_activity_3_JaydenF\\Backend\\BookSearch.aspx.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAgwB0AAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T11:55:23.793Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Book.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\App_Code\\Book.cs",
-              "RelativeDocumentMoniker": "SE256_activity_3_JaydenF\\App_Code\\Book.cs",
-              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\App_Code\\Book.cs",
-              "RelativeToolTip": "SE256_activity_3_JaydenF\\App_Code\\Book.cs",
-              "ViewState": "AQIAAP8AAAAAAAAAAADgv5wAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T15:11:44.046Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EbookManager.aspx.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\EbookManager.aspx.cs",
-              "RelativeDocumentMoniker": "SE256_activity_3_JaydenF\\Backend\\EbookManager.aspx.cs",
-              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\EbookManager.aspx.cs",
-              "RelativeToolTip": "SE256_activity_3_JaydenF\\Backend\\EbookManager.aspx.cs",
-              "ViewState": "AQIAAF8AAAAAAAAAAAAwwCsAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T15:09:40.222Z",
-              "EditorCaption": ""
+              "Title": "EbookManager.aspx",
+              "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\EbookManager.aspx",
+              "RelativeDocumentMoniker": "SE256_activity_3_JaydenF\\Backend\\EbookManager.aspx",
+              "ToolTip": "X:\\projects\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\EbookManager.aspx",
+              "RelativeToolTip": "SE256_activity_3_JaydenF\\Backend\\EbookManager.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-08-14T16:21:29.653Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "EbookManager.aspx",
-              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\EbookManager.aspx",
-              "RelativeDocumentMoniker": "SE256_activity_3_JaydenF\\Backend\\EbookManager.aspx",
-              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\EbookManager.aspx",
-              "RelativeToolTip": "SE256_activity_3_JaydenF\\Backend\\EbookManager.aspx",
+              "Title": "BookSearch.aspx",
+              "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\BookSearch.aspx",
+              "RelativeDocumentMoniker": "SE256_activity_3_JaydenF\\Backend\\BookSearch.aspx",
+              "ToolTip": "X:\\projects\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\BookSearch.aspx",
+              "RelativeToolTip": "SE256_activity_3_JaydenF\\Backend\\BookSearch.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-05T15:08:41.366Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-13T12:21:40.198Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Default.aspx.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\Default.aspx.cs",
-              "RelativeDocumentMoniker": "SE256_activity_3_JaydenF\\Backend\\Default.aspx.cs",
-              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\Default.aspx.cs",
-              "RelativeToolTip": "SE256_activity_3_JaydenF\\Backend\\Default.aspx.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABFAAAA",
+              "DocumentIndex": 3,
+              "Title": "BookSearch.aspx.cs",
+              "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\BookSearch.aspx.cs",
+              "RelativeDocumentMoniker": "SE256_activity_3_JaydenF\\Backend\\BookSearch.aspx.cs",
+              "ToolTip": "X:\\projects\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\BookSearch.aspx.cs",
+              "RelativeToolTip": "SE256_activity_3_JaydenF\\Backend\\BookSearch.aspx.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwCIAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T15:08:05.77Z"
+              "WhenOpened": "2024-08-13T11:55:23.793Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Default.aspx",
-              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\Default.aspx",
-              "RelativeDocumentMoniker": "SE256_activity_3_JaydenF\\Backend\\Default.aspx",
-              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\Default.aspx",
-              "RelativeToolTip": "SE256_activity_3_JaydenF\\Backend\\Default.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-05T15:07:15.291Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ControlPanel.aspx.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\ControlPanel.aspx.cs",
-              "RelativeDocumentMoniker": "SE256_activity_3_JaydenF\\Backend\\ControlPanel.aspx.cs",
-              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\ControlPanel.aspx.cs",
-              "RelativeToolTip": "SE256_activity_3_JaydenF\\Backend\\ControlPanel.aspx.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAACIAAAAFAAAA",
+              "DocumentIndex": 0,
+              "Title": "Book.cs",
+              "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\App_Code\\Book.cs",
+              "RelativeDocumentMoniker": "SE256_activity_3_JaydenF\\App_Code\\Book.cs",
+              "ToolTip": "X:\\projects\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\App_Code\\Book.cs",
+              "RelativeToolTip": "SE256_activity_3_JaydenF\\App_Code\\Book.cs",
+              "ViewState": "AQIAAAIBAAAAAAAAAAA2wBUBAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T15:06:11.221Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Site.Master",
-              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Site.Master",
-              "RelativeDocumentMoniker": "SE256_activity_3_JaydenF\\Site.Master",
-              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Site.Master",
-              "RelativeToolTip": "SE256_activity_3_JaydenF\\Site.Master",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-05T15:02:08.939Z",
+              "WhenOpened": "2024-08-05T15:11:44.046Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ControlPanel.aspx",
-              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\ControlPanel.aspx",
-              "RelativeDocumentMoniker": "SE256_activity_3_JaydenF\\Backend\\ControlPanel.aspx",
-              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Backend\\ControlPanel.aspx",
-              "RelativeToolTip": "SE256_activity_3_JaydenF\\Backend\\ControlPanel.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-05T15:02:56.085Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Default.aspx",
-              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Default.aspx",
-              "RelativeDocumentMoniker": "SE256_activity_3_JaydenF\\Default.aspx",
-              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\Default.aspx",
-              "RelativeToolTip": "SE256_activity_3_JaydenF\\Default.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-05T15:01:28.206Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "About.aspx",
-              "DocumentMoniker": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\About.aspx",
-              "RelativeDocumentMoniker": "SE256_activity_3_JaydenF\\About.aspx",
-              "ToolTip": "C:\\PROJECTS\\t4\\SE 256 - web development\\W3\\SE256_activity_3_JaydenF\\SE256_activity_3_JaydenF\\About.aspx",
-              "RelativeToolTip": "SE256_activity_3_JaydenF\\About.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-05T14:59:17.136Z"
             }
           ]
         }
