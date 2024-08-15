@@ -1,7 +1,22 @@
 @charset "UTF-8";
+#content {
+    justify-content:center;
+    align-items: flex-start;
+    margin-top: 20px;
+}   
+
+h2 {
+    font-size: 30px;
+}
 
 .high-scores{
     width:760px;
+    font-size: 30px;
+}
+
+.high-score {
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 .row{
     display:flex;
@@ -9,6 +24,6 @@
     width:200px;
 }
 #menus h2{
-    text-align: center;
+    text-align: flex-start;
 }
 

@@ -16,38 +16,29 @@
         <section class="blank"></section>
         <section id="content">
             <div id="menus">
-            <h2>HIGH SCORES</h2>
-            <!-- This is what your final html will look like
-                <div id="high-scores">
-                    //scores go here.
-                </div>
-            -->
+                <h2>HIGH SCORES</h2>
+                <!-- New container for high scores -->
+                <div id="high-scores-container"></div>
             </div>
         </section>
         <section class="blank"></section>
     </main>
     <script>
         var highScoreList = [
-            {name:`aaa`, score:1000},
-            {name:`bbb`, score:980}
-        ]
-        
-        //
-        var menus = document.querySelector(`#menus`);
+            {name: 'Your mother', score: 98},
+            {name: 'Hellen Keller', score: 1580}
+        ];
 
-        
-       
+        var message = "";
 
-     
+        // Loop through the array of objects
+        highScoreList.forEach(function(scoreObject) {
+            message += `<div class="high-score">Name: ${scoreObject.name} <br> Score: ${scoreObject.score}</div>`;
+        });
 
-
-
-      
-        
-
-
-        
-
+        var highScoresContainer = document.querySelector('#high-scores-container');
+        highScoresContainer.innerHTML = message;
     </script>
 </body>
 </html>
+
