@@ -72,19 +72,19 @@
         // append new menu to menus
         menus.appendChild(newMenu);
 
-        var timer = setTimeout(loadStartMenu, 1000);
+        var timer = setTimeout(loadStartMenu, 700);
         function loadStartMenu() {
-            $('#load').animate({opacity: 0}, 2000, function() {
+            $('#load').animate({opacity: 0}, 700, function() {
                 menus.removeChild(loadDiv);
-                $('#start').animate({opacity: 1}, 2000);
+                $('#start').animate({opacity: 1}, 700);
             });
         }
         
         $(document).ready(function() {
             $('#start button').click(function() {
-                $('#start').animate({opacity: 0}, 2000, function() {
+                $('#start').animate({opacity: 0}, 700, function() {
                     $(this).hide();
-                    $('#new-menu').css('display', 'block').animate({opacity: 1}, 2000);
+                    $('#new-menu').css('display', 'block').animate({opacity: 1}, 700);
                 });
             });
         });
