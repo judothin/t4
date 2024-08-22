@@ -25,10 +25,37 @@
             <asp:BoundColumn DataField="AuthorLastName" HeaderText="Author's Last Name" />
             <asp:BoundColumn DataField="DatePublished" HeaderText="Date Published" />
             <asp:HyperLinkColumn Text="Edit" DataNavigateUrlFormatString="~/Backend/EbookManager.aspx?Id={0}" DataNavigateUrlField="Id" />
-
-
         </Columns>
-        
     </asp:DataGrid>
+
+    <br />
+    <br />
+
+    <h1>Output option 2:</h1>
+    <asp:Repeater ID="rptSearch" runat="server">
+        <HeaderTemplate>
+            <asp:Label ID="lblHeader" runat="server" Text="Your results: " />
+            <br />
+        </HeaderTemplate>
+        <ItemTemplate>
+            <div>
+                <asp:Label ID="lblTitle" runat="server" Text='<%# Eval("Title") %>' />
+                <br />
+                <asp:Label ID="lblAuthorFirstName" runat="server" Text='<%# Eval("AuthorFirstName") %>' />
+                <br />
+                <asp:Label ID="lblAuthorLastName" runat="server" Text='<%# Eval("AuthorLastName") %>' />
+                <br />
+                <asp:Label ID="lblDatePublished" runat="server" Text='<%# Eval("DatePublished") %>' />
+                <br />
+                <asp:HyperLink ID="hlEdit" runat="server" Text="Edit" NavigateUrl='<%# Eval("ID", "~/Backend/EbookManager.aspx?ID={0}") %>' />
+            </div>
+            <br />
+        </ItemTemplate>
+    </asp:Repeater>
+
+
+
+    <asp:Label ID="Label1" runat="server" />
+
     <asp:Label ID="feedback_label" runat="server" />
 </asp:Content>

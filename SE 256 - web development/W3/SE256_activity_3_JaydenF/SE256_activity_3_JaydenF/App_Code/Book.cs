@@ -103,12 +103,7 @@ namespace SE256_activity_3_JaydenF.App_Code
             get => _datePublished;
             set
             {
-                if (value > DateTime.Now)
-                {
-                    Errors.Add("Date Published must not be in the future");
-                    return;
-                }
-
+                // No validation for future dates, allowing any date
                 _datePublished = value;
             }
         }
@@ -118,6 +113,12 @@ namespace SE256_activity_3_JaydenF.App_Code
             get => _price;
             set
             {
+                if (!ValidationLibrary.NoNegative(value))
+                {
+                    Errors.Add("Price cannot be negative");
+                    return;
+                }
+
                 _price = value;
             }
         }
@@ -127,6 +128,12 @@ namespace SE256_activity_3_JaydenF.App_Code
             get => _pages;
             set
             {
+                if (!ValidationLibrary.NoNegative(value))
+                {
+                    Errors.Add("Number of pages cannot be negative");
+                    return;
+                }
+
                 _pages = value;
             }
         }

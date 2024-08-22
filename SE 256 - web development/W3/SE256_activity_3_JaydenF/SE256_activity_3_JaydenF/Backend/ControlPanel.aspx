@@ -9,6 +9,8 @@
         <table>
             <tr>
                 <td><a href="EbookManager.aspx" runat="server">Add a New Book</a></td>
+            </tr>
+            <tr>
                 <td><a href="BookSearch.aspx" runat="server">Search a Book</a></td>
             </tr>
             <tr>
