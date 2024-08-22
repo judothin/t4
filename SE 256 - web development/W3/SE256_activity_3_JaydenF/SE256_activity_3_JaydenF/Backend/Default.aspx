@@ -6,7 +6,7 @@
         Username: <asp:TextBox ID="username_input" runat="server" />
         <br />
         <br />
-        Password: <asp:TextBox ID="password_input" runat="server" textMod="password" />
+        Password: <asp:TextBox ID="password_input" runat="server" textMode="password" />
         <br />
         <br />
         <asp:Button ID="login" runat="server" OnClick="login_button_click" Text="Login" />

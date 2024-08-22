@@ -10,6 +10,12 @@ namespace SE256_activity_3_JaydenF.Backend
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["logged_in"] == null || (bool)Session["logged_in"] == false)
+            {
+                Response.Redirect("~/Backend/Default.aspx");
+                return;
+            }
+
             if (!IsPostBack)
             {
                 if (Request.QueryString["Id"] != null)
@@ -19,6 +25,7 @@ namespace SE256_activity_3_JaydenF.Backend
                 }
             }
         }
+
 
         private void LoadBookDetails(int id)
         {
@@ -41,27 +48,37 @@ namespace SE256_activity_3_JaydenF.Backend
 
         protected void submit_button_click(Object sender, EventArgs e)
         {
+            // Validate Price
             if (!double.TryParse(price_per_copy.Text, out double price))
             {
                 feedback_label.Text = "Price per copy must be a number.";
                 return;
             }
 
+            // Validate Pages
             if (!int.TryParse(number_of_pages.Text, out int pages))
             {
                 feedback_label.Text = "Number of pages must be a number.";
                 return;
             }
 
+            // Create the book object
             Book book = new Book(
-                book_title.Text,
-                author_first_name.Text,
-                author_last_name.Text,
-                author_email.Text,
+                book_title.Text.Trim(),
+                author_first_name.Text.Trim(),
+                author_last_name.Text.Trim(),
+                author_email.Text.Trim(),
                 date_published.SelectedDate,
                 price,
                 pages
             );
+
+            // Check if there are any errors in the book object
+            if (book.HasErrors())
+            {
+                feedback_label.Text = book.GetFeedback();
+                return;
+            }
 
             string connectionString = "Server=sql.neit.edu,4500;Database=Dev_202430_JFagre;User Id=Dev_202430_JFagre;Password=008024602;Encrypt=True;TrustServerCertificate=True;";
 
@@ -76,11 +93,12 @@ namespace SE256_activity_3_JaydenF.Backend
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Title", book.Title);
+                        // Add parameters with validation to ensure they are not null
+                        cmd.Parameters.AddWithValue("@Title", book.Title ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@AuthorFirstName", book.AuthorFirstName);
                         cmd.Parameters.AddWithValue("@AuthorLastName", book.AuthorLastName);
-                        cmd.Parameters.AddWithValue("@Email", book.Email);
-                        cmd.Parameters.AddWithValue("@DatePublished", book.DatePublished);
+                        cmd.Parameters.AddWithValue("@Email", book.Email ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@DatePublished", book.DatePublished != DateTime.MinValue ? (object)book.DatePublished : DBNull.Value);
                         cmd.Parameters.AddWithValue("@Price", book.Price);
                         cmd.Parameters.AddWithValue("@Pages", book.Pages);
 
@@ -95,6 +113,8 @@ namespace SE256_activity_3_JaydenF.Backend
                 feedback_label.Text = "An error occurred: " + ex.Message;
             }
         }
+
+
 
         protected void update_button_Click(object sender, EventArgs e)
         {

@@ -14,9 +14,10 @@ namespace SE256_activity_3_JaydenF.Backend
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["LoggedIn"] != null && Session["LoggedIn"].ToString() == "TRUE")
+            if (Session["logged_in"] == null || (bool)Session["logged_in"] == false)
             {
-                // yas
+                Response.Redirect("~/Backend/Default.aspx");
+                return;
             }
         }
 
@@ -36,6 +37,11 @@ namespace SE256_activity_3_JaydenF.Backend
             dgResults.DataSource = results;
             dgResults.DataBind();
 
+            // Bind the results to the Repeater
+            rptSearch.DataSource = results;
+            rptSearch.DataBind();
+
+            // Provide feedback on the number of books found
             if (results.Count == 0)
             {
                 feedback_label.Text = "No books found matching the search criteria.";
@@ -44,7 +50,10 @@ namespace SE256_activity_3_JaydenF.Backend
             {
                 feedback_label.Text = $"{results.Count} books found.";
             }
+
+            
         }
+
 
     }
 }
