@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SE256_RazorLab_JaydenF.props" />
+</Project>

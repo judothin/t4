@@ -1,0 +1,38 @@
+﻿@page
+@model SE256_RazorLab_JaydenF.Pages.MakeReportModel
+@{
+    ViewData["Title"] = "Make a Report";
+}
+
+<h1>Make a Report</h1>
+
+<form method="post">
+
+    <input type="text" asp-for="rReport.ReporterFname" placeholder="your first name" />
+    <input type="text" asp-for="rReport.ReporterLname" placeholder="your last name" />
+    <input type="text" asp-for="rReport.PotCriminalFname" placeholder="Criminals first name" />
+    <input type="text" asp-for="rReport.PotCriminalLname" placeholder="Criminals last name" />
+    <input type="text" asp-for="rReport.CrimeDesc" placeholder="description of crime" />
+    <label for="crimeDate">Date crime was commited:</label>
+    <input type="date" id="crimeDate" asp-for="rReport.CrimeDate" />
+    <label for="crimeReportDate">Date crime was reported:</label>
+    <input type="date" id="crimeReportDate" asp-for="rReport.ReportDate" label="date crime was reported" />
+    <input type="text" asp-for="rReport.ReporterEmail" placeholder="your email" />
+
+    <button type="submit">Submit</button>
+
+</form>
+
+@{
+    if (Model.rReport is null == false)
+    {
+        <h1>Results: </h1>
+        <p>Reporters first name: @Model.rReport.ReporterFname</p>
+        <p>Reporters last name: @Model.rReport.ReporterLname</p>
+        <p>Criminals first name: @Model.rReport.PotCriminalFname</p>
+        <p>Criminals last name: @Model.rReport.PotCriminalLname</p>
+        <p>Reporters email: @Model.rReport.ReporterEmail</p>
+        <p>Crime date: @Model.rReport.CrimeDate</p>
+        <p>Report date: @Model.rReport.ReportDate</p>
+    }
+}
