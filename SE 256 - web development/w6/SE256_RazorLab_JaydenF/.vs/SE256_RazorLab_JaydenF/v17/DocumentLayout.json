@@ -1,0 +1,128 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "X:\\projects\\t4\\SE 256 - web development\\w6\\SE256_RazorLab_JaydenF\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A820645E-5BD5-4D29-97F6-A93160432AFE}|SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF.csproj|x:\\projects\\t4\\se 256 - web development\\w6\\se256_razorlab_jaydenf\\se256_razorlab_jaydenf\\pages\\makereport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A820645E-5BD5-4D29-97F6-A93160432AFE}|SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF.csproj|solutionrelative:se256_razorlab_jaydenf\\pages\\makereport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A820645E-5BD5-4D29-97F6-A93160432AFE}|SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF.csproj|x:\\projects\\t4\\se 256 - web development\\w6\\se256_razorlab_jaydenf\\se256_razorlab_jaydenf\\models\\addcriminalreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A820645E-5BD5-4D29-97F6-A93160432AFE}|SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF.csproj|solutionrelative:se256_razorlab_jaydenf\\models\\addcriminalreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A820645E-5BD5-4D29-97F6-A93160432AFE}|SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF.csproj|x:\\projects\\t4\\se 256 - web development\\w6\\se256_razorlab_jaydenf\\se256_razorlab_jaydenf\\pages\\makereport.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A820645E-5BD5-4D29-97F6-A93160432AFE}|SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF.csproj|solutionrelative:se256_razorlab_jaydenf\\pages\\makereport.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A820645E-5BD5-4D29-97F6-A93160432AFE}|SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF.csproj|x:\\projects\\t4\\se 256 - web development\\w6\\se256_razorlab_jaydenf\\se256_razorlab_jaydenf\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A820645E-5BD5-4D29-97F6-A93160432AFE}|SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF.csproj|solutionrelative:se256_razorlab_jaydenf\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A820645E-5BD5-4D29-97F6-A93160432AFE}|SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF.csproj|x:\\projects\\t4\\se 256 - web development\\w6\\se256_razorlab_jaydenf\\se256_razorlab_jaydenf\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A820645E-5BD5-4D29-97F6-A93160432AFE}|SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF.csproj|solutionrelative:se256_razorlab_jaydenf\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A820645E-5BD5-4D29-97F6-A93160432AFE}|SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF.csproj|x:\\projects\\t4\\se 256 - web development\\w6\\se256_razorlab_jaydenf\\se256_razorlab_jaydenf\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A820645E-5BD5-4D29-97F6-A93160432AFE}|SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF.csproj|solutionrelative:se256_razorlab_jaydenf\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 258,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MakeReport.cshtml.cs",
+              "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\w6\\SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF\\Pages\\MakeReport.cshtml.cs",
+              "RelativeDocumentMoniker": "SE256_RazorLab_JaydenF\\Pages\\MakeReport.cshtml.cs",
+              "ToolTip": "X:\\projects\\t4\\SE 256 - web development\\w6\\SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF\\Pages\\MakeReport.cshtml.cs",
+              "RelativeToolTip": "SE256_RazorLab_JaydenF\\Pages\\MakeReport.cshtml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T01:25:10.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MakeReport.cshtml",
+              "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\w6\\SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF\\Pages\\MakeReport.cshtml",
+              "RelativeDocumentMoniker": "SE256_RazorLab_JaydenF\\Pages\\MakeReport.cshtml",
+              "ToolTip": "X:\\projects\\t4\\SE 256 - web development\\w6\\SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF\\Pages\\MakeReport.cshtml",
+              "RelativeToolTip": "SE256_RazorLab_JaydenF\\Pages\\MakeReport.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-27T01:14:52.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\w6\\SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "SE256_RazorLab_JaydenF\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "X:\\projects\\t4\\SE 256 - web development\\w6\\SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "SE256_RazorLab_JaydenF\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAABuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-27T01:13:52.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\w6\\SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF\\Pages\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "SE256_RazorLab_JaydenF\\Pages\\Index.cshtml.cs",
+              "ToolTip": "X:\\projects\\t4\\SE 256 - web development\\w6\\SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF\\Pages\\Index.cshtml.cs",
+              "RelativeToolTip": "SE256_RazorLab_JaydenF\\Pages\\Index.cshtml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T01:12:45.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\w6\\SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "SE256_RazorLab_JaydenF\\Pages\\Index.cshtml",
+              "ToolTip": "X:\\projects\\t4\\SE 256 - web development\\w6\\SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF\\Pages\\Index.cshtml",
+              "RelativeToolTip": "SE256_RazorLab_JaydenF\\Pages\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-27T01:11:54.618Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 142,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddCriminalReport.cs",
+              "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\w6\\SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF\\Models\\AddCriminalReport.cs",
+              "RelativeDocumentMoniker": "SE256_RazorLab_JaydenF\\Models\\AddCriminalReport.cs",
+              "ToolTip": "X:\\projects\\t4\\SE 256 - web development\\w6\\SE256_RazorLab_JaydenF\\SE256_RazorLab_JaydenF\\Models\\AddCriminalReport.cs",
+              "RelativeToolTip": "SE256_RazorLab_JaydenF\\Models\\AddCriminalReport.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T01:05:15.651Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+﻿@page
+@model TroubleTickets.Pages.AddTicketModel
+@{
+    ViewData["Title"] = "Add Ticket";
+}
+
+<h1>AddTicket</h1>
+
+<form method="post">
+
+    <input type="text" asp-for="tTicket.Ticket_Title" placeholder="brief title" />
+    <input type="text" asp-for="tTicket.Ticket_Desc" placeholder="Description of problem" />
+    <input type="text" asp-for="tTicket.Category" placeholder="Category" />
+    <input type="text" asp-for="tTicket.Reporting_Email" placeholder="Your_Email" />
+
+    <button type="submit">Submit</button>
+
+</form>
+
+@{
+    if (Model.tTicket is null == false)
+    {
+        <h1>Results</h1>
+        <p>@Model.tTicket.Ticket_Title</p>
+        <p>@Model.tTicket.Reporting_Email</p>
+    }
+}
