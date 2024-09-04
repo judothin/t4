@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "X:\\projects\\t4\\SE 256 - web development\\w6\\TroubleTickets\\TroubleTickets\\TroubleTickets.csproj": {}
+    "C:\\PROJECTS\\t4\\SE 256 - web development\\w6\\TroubleTickets\\TroubleTickets\\TroubleTickets.csproj": {}
   },
   "projects": {
-    "X:\\projects\\t4\\SE 256 - web development\\w6\\TroubleTickets\\TroubleTickets\\TroubleTickets.csproj": {
+    "C:\\PROJECTS\\t4\\SE 256 - web development\\w6\\TroubleTickets\\TroubleTickets\\TroubleTickets.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "X:\\projects\\t4\\SE 256 - web development\\w6\\TroubleTickets\\TroubleTickets\\TroubleTickets.csproj",
+        "projectUniqueName": "C:\\PROJECTS\\t4\\SE 256 - web development\\w6\\TroubleTickets\\TroubleTickets\\TroubleTickets.csproj",
         "projectName": "TroubleTickets",
-        "projectPath": "X:\\projects\\t4\\SE 256 - web development\\w6\\TroubleTickets\\TroubleTickets\\TroubleTickets.csproj",
-        "packagesPath": "C:\\Users\\jayde\\.nuget\\packages\\",
-        "outputPath": "X:\\projects\\t4\\SE 256 - web development\\w6\\TroubleTickets\\TroubleTickets\\obj\\",
+        "projectPath": "C:\\PROJECTS\\t4\\SE 256 - web development\\w6\\TroubleTickets\\TroubleTickets\\TroubleTickets.csproj",
+        "packagesPath": "C:\\Users\\jaden\\.nuget\\packages\\",
+        "outputPath": "C:\\PROJECTS\\t4\\SE 256 - web development\\w6\\TroubleTickets\\TroubleTickets\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jayde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jaden\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -68,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
