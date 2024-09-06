@@ -8,14 +8,38 @@
 
 <form method="post">
 
-    <input type="text" asp-for="tTicket.Ticket_Title" placeholder="brief title" />
-    <input type="text" asp-for="tTicket.Ticket_Desc" placeholder="Description of problem" />
-    <input type="text" asp-for="tTicket.Category" placeholder="Category" />
-    <input type="text" asp-for="tTicket.Reporting_Email" placeholder="Your_Email" />
+    <div class="form-group">
+        <label asp-for="tTicket.Ticket_Title"></label>
+        <input asp-for="tTicket.Ticket_Title" class="form-control" placeholder="Brief descriptive title" />
+        <span asp-validation-for="tTicket.Ticket_Title" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="tTicket.Ticket_Desc"></label>
+        <input asp-for="tTicket.Ticket_Desc" class="form-control" placeholder="Description of problem/s" />
+        <span asp-validation-for="tTicket.Ticket_Desc" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="tTicket.Category"></label>
+        <input asp-for="tTicket.Category" class="form-control" placeholder="Category" />
+        <span asp-validation-for="tTicket.Category" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="tTicket.Reporting_Email"></label>
+        <input asp-for="tTicket.Reporting_Email" class="form-control" placeholder="Email" />
+        <span asp-validation-for="tTicket.Reporting_Email" class="text-danger"></span>
+    </div>
+
 
     <button type="submit">Submit</button>
 
 </form>
+
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
 
 @{
     if (Model.tTicket is null == false)
