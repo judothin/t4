@@ -1,0 +1,36 @@
+﻿@page
+@model TroubleTickets.Pages.Admin.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1>Login Page</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="admin.Email"></label>
+        <input asp-for="admin.Email" type="text" class="form-control" placeholder="email" />
+        <span asp-validation-for="admin.Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="admin.Password"></label>
+        <input asp-for="admin.Password" type="text" class="form-control" placeholder="email" />
+        <span asp-validation-for="admin.Password" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="/lib/jquery-validation/dist/jquery.validation.min.js"></script>
+<script src="/lib/jquery-validation-unobtrusive/dist/jquery.validation.unobtrusive.min.js"></script>
+
+@{
+    if (Model.admin != null && Model.admin.Feedback != null)
+    {
+        <h1>Results</h1>
+        <p>@Model.admin.Feedback</p>
+    }
+}

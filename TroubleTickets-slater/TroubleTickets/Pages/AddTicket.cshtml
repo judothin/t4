@@ -1,0 +1,51 @@
+﻿@page
+@model TroubleTickets.Pages.AddTicketModel
+@{
+    ViewData["title"] = "Add Ticket";
+}
+
+
+<h1>Add Ticket</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="troubleTicket.Title"></label>
+        <input type="text" asp-for="troubleTicket.Title" class="form-control" placeholder="Title" />
+        <span asp-validation-for="troubleTicket.Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="troubleTicket.Description"></label>
+        <input type="text" asp-for="troubleTicket.Description" class="form-control" placeholder="Description" />
+        <span asp-validation-for="troubleTicket.Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="troubleTicket.Category"></label>
+        <input type="text" asp-for="troubleTicket.Category" class="form-control" placeholder="Category" />
+        <span asp-validation-for="troubleTicket.Category" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="troubleTicket.ReporterEmail"></label>
+        <input type="text" asp-for="troubleTicket.ReporterEmail" class="form-control" placeholder="ReporterEmail" />
+        <span asp-validation-for="troubleTicket.ReporterEmail" class="text-danger"></span>
+    </div>
+    <button type="submit">Add</button>
+</form>
+
+<script src="/lib/jqyery/dist/jquery.min.js"></script>
+<script src="/lib/jqyery-validation/dist/jquery.validate.min.js"></script>
+<script src="/lib/jqyery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+
+@{
+    if (Model.troubleTicket != null && Model.troubleTicket.Feedback != null)
+    {
+        <h1>Results</h1>
+        <p>@Model.troubleTicket.Feedback</p>
+    }
+
+    if (Model.troubleTicket is null == false)
+    {
+        <h1>Results</h1>
+        <p>@Model.troubleTicket.Title</p>
+        <p>@Model.troubleTicket.ReporterEmail</p>
+    }
+}

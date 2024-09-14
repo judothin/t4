@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "X:\\projects\\t4\\SE 256 - web development\\w6\\TroubleTickets\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8CA7E03D-5A95-4401-9B04-212D30366117}|TroubleTickets\\TroubleTickets.csproj|X:\\projects\\t4\\SE 256 - web development\\w6\\TroubleTickets\\troubletickets\\models\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8CA7E03D-5A95-4401-9B04-212D30366117}|TroubleTickets\\TroubleTickets.csproj|X:\\projects\\t4\\SE 256 - web development\\w6\\TroubleTickets\\troubletickets\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8CA7E03D-5A95-4401-9B04-212D30366117}|TroubleTickets\\TroubleTickets.csproj|solutionrelative:troubletickets\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CA7E03D-5A95-4401-9B04-212D30366117}|TroubleTickets\\TroubleTickets.csproj|x:\\projects\\t4\\se 256 - web development\\w6\\troubletickets\\troubletickets\\models\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8CA7E03D-5A95-4401-9B04-212D30366117}|TroubleTickets\\TroubleTickets.csproj|solutionrelative:troubletickets\\models\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8CA7E03D-5A95-4401-9B04-212D30366117}|TroubleTickets\\TroubleTickets.csproj|x:\\projects\\t4\\se 256 - web development\\w6\\troubletickets\\troubletickets\\pages\\addticket.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8CA7E03D-5A95-4401-9B04-212D30366117}|TroubleTickets\\TroubleTickets.csproj|X:\\projects\\t4\\SE 256 - web development\\w6\\TroubleTickets\\troubletickets\\pages\\addticket.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8CA7E03D-5A95-4401-9B04-212D30366117}|TroubleTickets\\TroubleTickets.csproj|solutionrelative:troubletickets\\pages\\addticket.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8CA7E03D-5A95-4401-9B04-212D30366117}|TroubleTickets\\TroubleTickets.csproj|X:\\projects\\t4\\SE 256 - web development\\w6\\TroubleTickets\\troubletickets\\pages\\addticket.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8CA7E03D-5A95-4401-9B04-212D30366117}|TroubleTickets\\TroubleTickets.csproj|solutionrelative:troubletickets\\pages\\addticket.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8CA7E03D-5A95-4401-9B04-212D30366117}|TroubleTickets\\TroubleTickets.csproj|X:\\projects\\t4\\SE 256 - web development\\w6\\TroubleTickets\\troubletickets\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8CA7E03D-5A95-4401-9B04-212D30366117}|TroubleTickets\\TroubleTickets.csproj|solutionrelative:troubletickets\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8CA7E03D-5A95-4401-9B04-212D30366117}|TroubleTickets\\TroubleTickets.csproj|X:\\projects\\t4\\SE 256 - web development\\w6\\TroubleTickets\\troubletickets\\models\\validationlib.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
@@ -54,12 +54,11 @@
               "RelativeToolTip": "TroubleTickets\\Models\\ValidationLib.cs",
               "ViewState": "AQIAABkAAAAAAAAAAAAgwDkAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T11:37:54.293Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-29T11:37:54.293Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AddTicket.cshtml.cs",
               "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\w6\\TroubleTickets\\TroubleTickets\\Pages\\AddTicket.cshtml.cs",
               "RelativeDocumentMoniker": "TroubleTickets\\Pages\\AddTicket.cshtml.cs",
@@ -67,12 +66,11 @@
               "RelativeToolTip": "TroubleTickets\\Pages\\AddTicket.cshtml.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAAoAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T01:49:58.064Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-24T01:49:58.064Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AddTicket.cshtml",
               "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\w6\\TroubleTickets\\TroubleTickets\\Pages\\AddTicket.cshtml",
               "RelativeDocumentMoniker": "TroubleTickets\\Pages\\AddTicket.cshtml",
@@ -80,18 +78,17 @@
               "RelativeToolTip": "TroubleTickets\\Pages\\AddTicket.cshtml",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAACkAAABXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-24T01:49:11.656Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-24T01:49:11.656Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Class.cs",
               "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\w6\\TroubleTickets\\TroubleTickets\\Models\\Class.cs",
               "RelativeDocumentMoniker": "TroubleTickets\\Models\\Class.cs",
               "ToolTip": "X:\\projects\\t4\\SE 256 - web development\\w6\\TroubleTickets\\TroubleTickets\\Models\\Class.cs",
               "RelativeToolTip": "TroubleTickets\\Models\\Class.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACoAAAASAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAB4AAABWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-24T01:44:39.864Z",
               "EditorCaption": ""
@@ -110,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "X:\\projects\\t4\\SE 256 - web development\\w6\\TroubleTickets\\TroubleTickets\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "TroubleTickets\\Pages\\Index.cshtml",

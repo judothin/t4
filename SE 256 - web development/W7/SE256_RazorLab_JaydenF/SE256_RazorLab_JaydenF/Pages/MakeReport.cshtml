@@ -1,0 +1,74 @@
+﻿@page
+@model SE256_RazorLab_JaydenF.Pages.MakeReportModel
+@{
+    ViewData["Title"] = "Make a Report";
+}
+
+<h1>Make a Report</h1>
+
+<form method="post">
+
+    <div class="form-group">
+        <label asp-for="rReport.ReporterFname">First Name</label>
+        <input type="text" asp-for="rReport.ReporterFname" class="form-control" placeholder="Your first name" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="rReport.ReporterLname">Last Name</label>
+        <input type="text" asp-for="rReport.ReporterLname" class="form-control" placeholder="Your last name" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="rReport.PotCriminalFname">Criminal's First Name</label>
+        <input type="text" asp-for="rReport.PotCriminalFname" class="form-control" placeholder="Criminal's first name" />
+        @Html.ValidationMessageFor(model => model.rReport.PotCriminalFname, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <label asp-for="rReport.PotCriminalLname">Criminal's Last Name</label>
+        <input type="text" asp-for="rReport.PotCriminalLname" class="form-control" placeholder="Criminal's last name" />
+        @Html.ValidationMessageFor(model => model.rReport.PotCriminalLname, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <label asp-for="rReport.CrimeDesc">Crime Description</label>
+        <input type="text" asp-for="rReport.CrimeDesc" class="form-control" placeholder="Description of crime" />
+        @Html.ValidationMessageFor(model => model.rReport.CrimeDesc, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <label asp-for="rReport.CrimeDate">Date Crime Was Committed</label>
+        <input type="date" asp-for="rReport.CrimeDate" class="form-control" />
+        @Html.ValidationMessageFor(model => model.rReport.CrimeDate, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <label asp-for="rReport.ReportDate">Date of Report</label>
+        <input type="date" asp-for="rReport.ReportDate" class="form-control" />
+        @Html.ValidationMessageFor(model => model.rReport.ReportDate, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <label asp-for="rReport.ReporterEmail">Email</label>
+        <input type="text" asp-for="rReport.ReporterEmail" class="form-control" placeholder="Your email" />
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+</form>
+
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+
+@{
+    if (Model.rReport != null && Model.rReport.Feedback != null)
+    {
+        <h1>Results:</h1>
+        <div>
+            <p>@Model.rReport.Feedback</p>
+        </div>
+    }
+}

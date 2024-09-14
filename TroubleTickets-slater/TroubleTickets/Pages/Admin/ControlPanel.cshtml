@@ -1,0 +1,60 @@
+﻿@page
+@model TroubleTickets.Pages.Admin.ControlPanelModel
+@{
+    ViewData["Title"] = "Control Panel";
+}
+
+<h1>Control Panel</h1>
+
+<div>
+    <table class="table table-bordered table-sm table-striped">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>title</td>
+                <td>category</td>
+                <td>submitted by</td>
+                <td>reported on</td>
+                <td>active</td>
+                <td>contact</td>
+                <td>response</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model == null)
+            {
+                <tr>
+                    <td colspan="7" class="text-center">No Model</td>
+                </tr>
+            }
+            else
+            {
+                @foreach (var ticket in Model.tickets)
+                {
+                    <tr>
+                        <td>@ticket.Id</td>
+                        <td>@ticket.Title</td>
+                        <td>@ticket.Category</td>
+                        <td>@ticket.ReporterEmail</td>
+                        <td>@ticket.CreatedAt</td>
+                        @{
+                            if (ticket.Active)
+                            {
+                                <td>Active</td>
+                            }
+                            else
+                            {
+                                <td>Closed</td>
+                            }
+                        }
+                        <td>@ticket.ResponderEmail</td>
+                        <td style="width: 100%;">@ticket.Notes</td>
+                        <td><a asp-page="/Admin/EditTicket" asp-route-id="@ticket.Id">Edit</a></td>
+                        <td><a asp-page="/Admin/DeleteTicket" asp-route-id="@ticket.Id">Delete</a></td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

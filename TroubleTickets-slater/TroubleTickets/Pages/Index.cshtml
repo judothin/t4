@@ -1,0 +1,56 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome, @Model.FirstName</h1>
+    <table class="table table-bordered table-sm table-striped">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>title</td>
+                <td>category</td>
+                <td>submitted by</td>
+                <td>reported on</td>
+                <td>active</td>
+                <td>contact</td>
+                <td>response</td>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model == null)
+            {
+                <tr>
+                    <td colspan="7" class="text-center">No Model</td>
+                </tr>
+            }
+            else
+            {
+                @foreach (var ticket in Model.troubleTickets)
+                {
+                    <tr>
+                        <td>@ticket.Id</td>
+                        <td>@ticket.Title</td>
+                        <td>@ticket.Category</td>
+                        <td>@ticket.ReporterEmail</td>
+                        <td>@ticket.CreatedAt</td>
+                        @{
+                            if (ticket.Active)
+                            {
+                                <td>Active</td>
+                            }
+                            else
+                            {
+                                <td>Closed</td>
+                            }
+                        }
+                        <td>@ticket.ResponderEmail</td>
+                        <td style="width: 100%;">@ticket.Notes</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

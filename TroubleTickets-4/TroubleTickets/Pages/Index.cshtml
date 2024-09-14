@@ -1,0 +1,54 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome, @Model.FirstName</h1>
+    <table class="table table-bordered table-sm table-striped" style="table-layout: fixed; width: 100%;">
+        <thead>
+            <tr>
+                <td style="width: 5%;">id</td>
+                <td style="width: 15%;">title</td>
+                <td style="width: 10%;">category</td>
+                <td style="width: 15%;">submitted by</td>
+                <td style="width: 10%;">reported on</td>
+                <td style="width: 10%;">active</td>
+                <td style="width: 15%;">Responder Email</td>
+                <td style="width: 20%;">Notes</td>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model == null)
+            {
+                <tr>
+                    <td colspan="8" class="text-left">No Model</td>
+                </tr>
+            }
+            else
+            {
+                @foreach (var ticket in Model.troubleTickets)
+                {
+                    <tr>
+                        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@ticket.Id</td>
+                        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@ticket.Title</td>
+                        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@ticket.Category</td>
+                        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@ticket.ReporterEmail</td>
+                        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@ticket.CreatedAt</td>
+                        @if (ticket.Active)
+                        {
+                            <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Active</td>
+                        }
+                        else
+                        {
+                            <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Closed</td>
+                        }
+                        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@ticket.ResponderEmail</td>
+                        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@ticket.Notes</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
