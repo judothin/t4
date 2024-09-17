@@ -9,24 +9,14 @@
 
 <form method="post">
     <div class="form-group">
-        <label asp-for="troubleTicket.Title"></label>
-        <input type="text" asp-for="troubleTicket.Title" class="form-control" placeholder="Title" />
-        <span asp-validation-for="troubleTicket.Title" class="text-danger"></span>
+        <label asp-for="troubleTicket.Item"></label>
+        <input type="text" asp-for="troubleTicket.Item" class="form-control" placeholder="Fried Octopus..." />
+        <span asp-validation-for="troubleTicket.Item" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="troubleTicket.Description"></label>
-        <input type="text" asp-for="troubleTicket.Description" class="form-control" placeholder="Description" />
-        <span asp-validation-for="troubleTicket.Description" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="troubleTicket.Category"></label>
-        <input type="text" asp-for="troubleTicket.Category" class="form-control" placeholder="Category" />
-        <span asp-validation-for="troubleTicket.Category" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="troubleTicket.ReporterEmail"></label>
-        <input type="text" asp-for="troubleTicket.ReporterEmail" class="form-control" placeholder="ReporterEmail" />
-        <span asp-validation-for="troubleTicket.ReporterEmail" class="text-danger"></span>
+        <label asp-for="troubleTicket.Ingrediants"></label>
+        <input type="text" asp-for="troubleTicket.Ingrediants" class="form-control" placeholder="Pasts, Sauce, Butter, etc..." />
+        <span asp-validation-for="troubleTicket.Ingrediants" class="text-danger"></span>
     </div>
     <button type="submit">Add</button>
 </form>
@@ -45,7 +35,6 @@
     if (Model.troubleTicket is null == false)
     {
         <h1>Results</h1>
-        <p>@Model.troubleTicket.Title</p>
-        <p>@Model.troubleTicket.ReporterEmail</p>
+        <p>@Model.troubleTicket.Item</p>
     }
 }

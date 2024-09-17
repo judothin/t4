@@ -6,51 +6,48 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome, @Model.FirstName</h1>
-    <table class="table table-bordered table-sm table-striped">
-        <thead>
-            <tr>
-                <td>id</td>
-                <td>title</td>
-                <td>category</td>
-                <td>submitted by</td>
-                <td>reported on</td>
-                <td>active</td>
-                <td>contact</td>
-                <td>response</td>
-            </tr>
-        </thead>
-        <tbody>
-            @if (Model == null)
-            {
+    <div class="table-responsive">
+        <table class="table table-bordered table-sm table-striped mx-auto" style="width: 80%; text-align: center;">
+            <thead>
                 <tr>
-                    <td colspan="7" class="text-center">No Model</td>
+                    <th scope="col">ID</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Order Placed At</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Notes</th>
                 </tr>
-            }
-            else
-            {
-                @foreach (var ticket in Model.troubleTickets)
+            </thead>
+            <tbody>
+                @if (Model == null)
                 {
                     <tr>
-                        <td>@ticket.Id</td>
-                        <td>@ticket.Title</td>
-                        <td>@ticket.Category</td>
-                        <td>@ticket.ReporterEmail</td>
-                        <td>@ticket.CreatedAt</td>
-                        @{
-                            if (ticket.Active)
-                            {
-                                <td>Active</td>
-                            }
-                            else
-                            {
-                                <td>Closed</td>
-                            }
-                        }
-                        <td>@ticket.ResponderEmail</td>
-                        <td style="width: 100%;">@ticket.Notes</td>
+                        <td colspan="5" class="text-center">No Model</td>
                     </tr>
                 }
-            }
-        </tbody>
-    </table>
+                else
+                {
+                    @foreach (var ticket in Model.troubleTickets)
+                    {
+                        <tr>
+                            <td>@ticket.Id</td>
+                            <td>@ticket.Item</td>
+                            <td>@ticket.PlacedAt</td>
+                            <td>
+                                @if (ticket.Fulfilled)
+                                {
+                                    <span>Cooking</span>
+                                }
+                                else
+                                {
+                                    <span>Delivered</span>
+                                }
+                            </td>
+                            <td>@ticket.Notes</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
+

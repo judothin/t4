@@ -23,7 +23,7 @@ namespace TroubleTickets.Models
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string statement = "SELECT * FROM TroubleTickets ORDER BY createdAt;";
+                    string statement = "SELECT * FROM OrderTickets ORDER BY placedAt;";
                     SqlCommand command = new SqlCommand(statement, connection);
 
                     command.CommandType = CommandType.Text;
@@ -36,12 +36,9 @@ namespace TroubleTickets.Models
                         TroubleTicket ticket = new TroubleTicket();
 
                         ticket.Id = Convert.ToInt32(reader["id"]);
-                        ticket.Title = reader["id"].ToString();
-                        ticket.Category = reader["category"].ToString();
-                        ticket.ReporterEmail = reader["reporterEmail"].ToString();
-                        ticket.CreatedAt = DateTime.Parse(reader["createdAt"].ToString());
-                        ticket.Active = Boolean.Parse(reader["active"].ToString());
-                        ticket.ResponderEmail = reader["responderEmail"].ToString();
+                        ticket.Item = reader["item"].ToString();
+                        ticket.PlacedAt = DateTime.Parse(reader["placedAt"].ToString());
+                        ticket.Fulfilled = Boolean.Parse(reader["fulfilled"].ToString());
                         ticket.Notes = reader["notes"].ToString();
 
                         tickets.Add(ticket);
@@ -61,7 +58,7 @@ namespace TroubleTickets.Models
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string statement = "INSERT INTO TroubleTickets (title, description, category, reporterEmail, createdAt) VALUES (@title, @description, @category, @reporterEmail, @createdAt);";
+                string statement = "INSERT INTO OrderTickets (item, ingrediants, placedAt) VALUES (@item, @ingrediants, @placedAt);";
                 ticket.Feedback = String.Empty;
 
                 try
@@ -69,11 +66,9 @@ namespace TroubleTickets.Models
                     using (SqlCommand command = new SqlCommand(statement, connection))
                     {
                         command.CommandType = CommandType.Text;
-                        command.Parameters.AddWithValue("@title", ticket.Title);
-                        command.Parameters.AddWithValue("@description", ticket.Description);
-                        command.Parameters.AddWithValue("@category", ticket.Category);
-                        command.Parameters.AddWithValue("@reporterEmail", ticket.ReporterEmail);
-                        command.Parameters.AddWithValue("@createdAt", DateTime.Now);
+                        command.Parameters.AddWithValue("@item", ticket.Item);
+                        command.Parameters.AddWithValue("@ingrediants", ticket.Ingrediants);
+                        command.Parameters.AddWithValue("@placedAt", DateTime.Now);
 
                         connection.Open();
 
@@ -97,7 +92,7 @@ namespace TroubleTickets.Models
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string statement = "SELECT * FROM TroubleTickets WHERE id=@id;";
+                    string statement = "SELECT * FROM OrderTickets WHERE id=@id;";
                     SqlCommand command = new SqlCommand(statement, connection);
                     command.Parameters.AddWithValue("@id", id);
 
@@ -108,18 +103,15 @@ namespace TroubleTickets.Models
                     while (reader.Read())
                     {
                         ticket.Id = Convert.ToInt32(reader["id"]);
-                        ticket.Title = reader["title"].ToString();
-                        ticket.Description = reader["description"].ToString();
-                        ticket.Category = reader["category"].ToString();
-                        ticket.ReporterEmail = reader["reporterEmail"].ToString();
-                        ticket.CreatedAt = DateTime.Parse(reader["createdAt"].ToString());
-                        ticket.Active = Boolean.Parse(reader["active"].ToString());
-                        ticket.ResponderEmail = reader["responderEmail"].ToString();
+                        ticket.Item = reader["item"].ToString();
+                        ticket.Ingrediants = reader["ingrediants"].ToString();
+                        ticket.PlacedAt = DateTime.Parse(reader["placedAt"].ToString());
+                        ticket.Fulfilled = Boolean.Parse(reader["fullfilled"].ToString());
                         ticket.Notes = reader["notes"].ToString();
 
-                        if (DateTime.TryParse(reader["closedAt"].ToString(), out DateTime closedAt))
+                        if (DateTime.TryParse(reader["fulfilledAt"].ToString(), out DateTime fulfilledAt))
                         {
-                            ticket.ClosedAt = closedAt;
+                            ticket.FulfilledAt = fulfilledAt;
                         }
                     }
                 }
@@ -139,26 +131,25 @@ namespace TroubleTickets.Models
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     string statement;
-                    if (ticket.Active == false)
+                    if (ticket.Fulfilled == false)
                     {
-                        statement = "UPDATE TroubleTickets SET responderEmail=@responderEmail, notes=@notes, closedAt=@closedAt, active=@active WHERE id=@id;";
+                        statement = "UPDATE OrderTickets SET notes=@notes, fulfilledAt=@fulfilledAt, fulfilled=@fulfilled WHERE id=@id;";
                     }
                     else
                     {
-                        statement = "UPDATE TroubleTickets SET responderEmail=@responderEmail, notes=@notes, active=@active WHERE id=@id;";
+                        statement = "UPDATE OrderTickets SET notes=@notes, fulfilled=@fulfilled WHERE id=@id;";
                     }
 
                     SqlCommand command = new SqlCommand(statement, connection);
                     command.CommandType = CommandType.Text;
 
-                    command.Parameters.AddWithValue("@responderEmail", ticket.ResponderEmail);
                     command.Parameters.AddWithValue("@notes", ticket.Notes);
-                    command.Parameters.AddWithValue("@active", ticket.Active);
+                    command.Parameters.AddWithValue("@active", ticket.Fulfilled);
                     command.Parameters.AddWithValue("@id", ticket.Id);
 
-                    if (ticket.Active == false)
+                    if (ticket.Fulfilled == false)
                     {
-                        command.Parameters.AddWithValue("@closedAt", ticket.ClosedAt);
+                        command.Parameters.AddWithValue("@fulfilledAt", ticket.FulfilledAt);
                     }
 
                     connection.Open();
@@ -180,7 +171,7 @@ namespace TroubleTickets.Models
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string statement = "DELETE FROM TroubleTickets WHERE id=@id;";
+                    string statement = "DELETE FROM OrderTickets WHERE id=@id;";
                     SqlCommand command = new SqlCommand(statement, connection);
                     command.CommandType = CommandType.Text;
                     

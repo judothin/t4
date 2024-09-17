@@ -4,21 +4,19 @@
     ViewData["Title"] = "Control Panel";
 }
 
-<h1>Control Panel</h1>
+<h1 class="text-center">Control Panel</h1>
 
-<div>
-    <table class="table table-bordered table-sm table-striped">
+<div class="table-responsive">
+    <table class="table table-bordered table-sm table-striped mx-auto" style="width: 80%; text-align: center;">
         <thead>
             <tr>
-                <td>id</td>
-                <td>title</td>
-                <td>category</td>
-                <td>submitted by</td>
-                <td>reported on</td>
-                <td>active</td>
-                <td>contact</td>
-                <td>response</td>
-                <td>Action</td>
+                <th scope="col">ID</th>
+                <th scope="col">Item</th>
+                <th scope="col">Order Placed At</th>
+                <th scope="col">Status</th>
+                <th scope="col">Notes</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -34,22 +32,19 @@
                 {
                     <tr>
                         <td>@ticket.Id</td>
-                        <td>@ticket.Title</td>
-                        <td>@ticket.Category</td>
-                        <td>@ticket.ReporterEmail</td>
-                        <td>@ticket.CreatedAt</td>
-                        @{
-                            if (ticket.Active)
+                        <td>@ticket.Item</td>
+                        <td>@ticket.PlacedAt</td>
+                        <td>
+                            @if (ticket.Fulfilled)
                             {
-                                <td>Active</td>
+                                <span>Cooking</span>
                             }
                             else
                             {
-                                <td>Closed</td>
+                                <span>Delivered</span>
                             }
-                        }
-                        <td>@ticket.ResponderEmail</td>
-                        <td style="width: 100%;">@ticket.Notes</td>
+                        </td>
+                        <td>@ticket.Notes</td>
                         <td><a asp-page="/Admin/EditTicket" asp-route-id="@ticket.Id">Edit</a></td>
                         <td><a asp-page="/Admin/DeleteTicket" asp-route-id="@ticket.Id">Delete</a></td>
                     </tr>

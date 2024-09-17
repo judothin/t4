@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TroubleTickets")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e56116ef49cb5073a42861405f2e8b0733c44a4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dde2d27afc25f16094de44154280a1894521f6e1")]
 [assembly: System.Reflection.AssemblyProductAttribute("TroubleTickets")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TroubleTickets")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

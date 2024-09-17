@@ -4,7 +4,7 @@
     ViewData["Title"] = "Delete Ticket";
 }
 
-<h1>Delete Ticket</h1>
+<h1>Delete Order</h1>
 
 <h2>Delete</h2>
 <h3>Are you sure you want to delete this ticket?</h3>
@@ -13,28 +13,19 @@
     <hr />
     <d1 class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.ticket.Title)
+            @Html.DisplayNameFor(model => model.ticket.Item)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ticket.Category)
-        </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.ticket.Description)
+            @Html.DisplayNameFor(model => model.ticket.Ingrediants)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.ticket.CreatedAt)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ticket.ReporterEmail)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ticket.ResponderEmail)
+            @Html.DisplayFor(model => model.ticket.PlacedAt)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.ticket.Notes)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.ticket.ClosedAt)
+            @Html.DisplayFor(model => model.ticket.FulfilledAt)
         </dd>
     </d1>
 

@@ -4,33 +4,18 @@
     ViewData["Title"] = "Edit Ticket";
 }
 
-<h1>Edit Ticket</h1>
+<h1>Edit Order</h1>
 
 <form method="post">
     <div class="form-group">
-        <label asp-for="ticket.Title"></label>
-        <input asp-for="ticket.Title" type="text" class="form-control" placeholder="Ticket Title" />
-        <span asp-validation-for="ticket.Title" class="text-danger"></span>
+        <label asp-for="ticket.Item"></label>
+        <input asp-for="ticket.Item" type="text" class="form-control" placeholder="Item Name" />
+        <span asp-validation-for="ticket.Item" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="ticket.Description"></label>
-        <input asp-for="ticket.Description" type="text" class="form-control" placeholder="Ticket Description" />
-        <span asp-validation-for="ticket.Description" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="ticket.Category"></label>
-        <input asp-for="ticket.Category" type="text" class="form-control" placeholder="Ticket Category" />
-        <span asp-validation-for="ticket.Category" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="ticket.ReporterEmail"></label>
-        <input asp-for="ticket.ReporterEmail" type="text" class="form-control" placeholder="Reporter Email" />
-        <span asp-validation-for="ticket.ReporterEmail" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="ticket.ResponderEmail"></label>
-        <input asp-for="ticket.ResponderEmail" type="text" class="form-control" placeholder="Responder Email" />
-        <span asp-validation-for="ticket.ResponderEmail" class="text-danger"></span>
+        <label asp-for="ticket.Ingrediants"></label>
+        <input asp-for="ticket.Ingrediants" type="text" class="form-control" placeholder="Ingrediants" />
+        <span asp-validation-for="ticket.Ingrediants" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="ticket.Notes"></label>
@@ -38,18 +23,18 @@
         <span asp-validation-for="ticket.Notes" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="ticket.CreatedAt"></label>
-        <input asp-for="ticket.CreatedAt" type="text" class="form-control" placeholder="CreatedAt" />
-        <span asp-validation-for="ticket.CreatedAt" class="text-danger"></span>
+        <label asp-for="ticket.PlacedAt"></label>
+        <input asp-for="ticket.PlacedAt" type="text" class="form-control" placeholder="Order placed at" />
+        <span asp-validation-for="ticket.PlacedAt" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="ticket.Active"></label>
-        <select asp-for="ticket.Active" class="form-control">
+        <label asp-for="ticket.Fulfilled"></label>
+        <select asp-for="ticket.Fulfilled" class="form-control">
             <option value="">select value</option>
             <option value="false">Closed</option>
             <option value="true">Active</option>
         </select>
-        <span asp-validation-for="ticket.Active" class="text-danger"></span>
+        <span asp-validation-for="ticket.Fulfilled" class="text-danger"></span>
     </div>
     <input asp-for="ticket.Id" type="hidden" class="form-control" />
     <button type="submit" class="btn btn-primary">Update</button>
