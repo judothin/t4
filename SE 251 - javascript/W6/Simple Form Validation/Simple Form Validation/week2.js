@@ -1,4 +1,3 @@
-// ------------------------ call function on button click / change styleing ----------------------
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('input[type="button"]').addEventListener('click', function() {
         document.body.style.backgroundColor = 'black'; // change background to black
@@ -6,67 +5,114 @@ document.addEventListener('DOMContentLoaded', function() {
         validateForm(); // call the validation function
     });
 });
-// -----------------------------------------------------
 
 function validateForm() {
     // ------------------ regex patterns ---------------------
-    const namePattern = /^[a-z]+$/i;
+    const namePattern = /^[a-zA-Z-]+$/;
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phonePattern = /^\d{10}$/;
     // -----------------------------------------------
 
-    // ----------------- getting input values -----------------
-    const firstName = document.getElementById('first-name').value;
-    const lastName = document.getElementById('last-name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    // ----------------------------------------------
-
     // ----------------- validation -------------------
     let isValid = true;
 
-    if (!namePattern.test(firstName)) {
-        document.getElementById('fn-error').textContent = 'invalid first name';
+    const firstName = document.getElementById('first-name');
+    const lastName = document.getElementById('last-name');
+    const email = document.getElementById('email');
+    const phone = document.getElementById('phone');
+
+    // validate first name
+    if (firstName.value === '') {
+        document.getElementById('fn-error').textContent = 'Please input first name';
+        firstName.parentElement.classList.add('error');
+        isValid = false;
+    } else if (!namePattern.test(firstName.value)) {
+        document.getElementById('fn-error').textContent = 'Invalid characters in first name';
+        firstName.parentElement.classList.add('error');
         isValid = false;
     } else {
         document.getElementById('fn-error').textContent = '';
+        firstName.parentElement.classList.remove('error');
     }
 
-    if (!namePattern.test(lastName)) {
-        document.getElementById('ln-error').textContent = 'invalid last name';
+    // validate last name
+    if (lastName.value === '') {
+        document.getElementById('ln-error').textContent = 'Please input last name';
+        lastName.parentElement.classList.add('error');
+        isValid = false;
+    } else if (!namePattern.test(lastName.value)) {
+        document.getElementById('ln-error').textContent = 'Invalid characters in last name';
+        lastName.parentElement.classList.add('error');
         isValid = false;
     } else {
         document.getElementById('ln-error').textContent = '';
+        lastName.parentElement.classList.remove('error');
     }
 
-    if (!emailPattern.test(email)) {
-        document.getElementById('email-error').textContent = 'invalid email';
+    // validate email
+    if (email.value === '') {
+        document.getElementById('email-error').textContent = 'Please input email';
+        email.parentElement.classList.add('error');
+        isValid = false;
+    } else if (!emailPattern.test(email.value)) {
+        document.getElementById('email-error').textContent = 'Invalid email format';
+        email.parentElement.classList.add('error');
         isValid = false;
     } else {
         document.getElementById('email-error').textContent = '';
+        email.parentElement.classList.remove('error');
     }
 
-    if (!phonePattern.test(phone)) {
-        document.getElementById('phone-error').textContent = 'invalid phone number';
+    // validate phone number
+    if (phone.value === '') {
+        document.getElementById('phone-error').textContent = 'Please input phone number';
+        phone.parentElement.classList.add('error');
+        isValid = false;
+    } else if (!phonePattern.test(phone.value)) {
+        document.getElementById('phone-error').textContent = 'Invalid phone number format';
+        phone.parentElement.classList.add('error');
         isValid = false;
     } else {
         document.getElementById('phone-error').textContent = '';
+        phone.parentElement.classList.remove('error');
     }
     // -------------------------------------------------
 
-    if (isValid) {
+    if (isValid === true) {
+        document.getElementById('form').style.display = 'none';
+        document.getElementById('confirmation').style.marginTop = '45px';
+
         // ----------------- creating user object ------------------
+        const formattedPhone = phone.value.substring(0, 3) + '-' + phone.value.substring(3, 6) + '-' + phone.value.substring(6); // formatting phone number
+        
         const user = {
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            phone: phone
+            firstName: firstName.value,
+            lastName: lastName.value,
+            email: email.value,
+            phone: formattedPhone
         };
         // -----------------------------------------------
 
         // ----------------- writing user info to the html --------------------
+        document.getElementById('info').innerHTML = `${user.firstName} ${user.lastName} <br> ${user.email} <br> ${user.phone}`;
+        document.getElementById('confirmation').style.color = '#7110cc'; // changing style of html element
+        document.getElementById('confirmation').style.display = 'block';
+    }
 
-        document.getElementById('info').innerHTML = `your info was submitted successfully<br>first name: ${user.firstName}<br>last name: ${user.lastName}<br>email: ${user.email}<br>phone: ${user.phone}`;
+    if (isValid) {
+        // ----------------- creating user object ------------------
+        const formattedPhone = phone.value.substring(0, 3) + '-' + phone.value.substring(3, 6) + '-' + phone.value.substring(6); // formatting phone number
+        
+        const user = {
+            firstName: firstName.value,
+            lastName: lastName.value,
+            email: email.value,
+            phone: formattedPhone
+        };
+        // -----------------------------------------------
+    
+        // ----------------- writing user info to the html --------------------
+        document.getElementById('info').innerHTML = `${user.firstName} ${user.lastName} <br> ${user.email} <br> ${user.phone}`;
         document.getElementById('confirmation').style.color = '#7110cc'; // changing style of html element
         document.getElementById('confirmation').style.display = 'block';
     } else {
