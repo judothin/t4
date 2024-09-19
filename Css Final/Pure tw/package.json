@@ -1,0 +1,14 @@
+{
+  "name": "tw-final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss build styles.css -o output.css"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.12"
+  }
+}

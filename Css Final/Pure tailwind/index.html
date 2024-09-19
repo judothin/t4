@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Final (css ver)</title>
+    <link rel="stylesheet" href="dist/tailwind.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="h-24 flex p-2 justify-between items-center navbar">
+        <h2 class="ml-2 font-light text-5xl mt-10">Camp Crystal Lake</h2>
+        <div class="hamburger-menu">
+            &#9776;
+        </div>
+        <ul class="list-none m-0 p-0 flex flex-row items-center gap-2 mr-2 mdm:hidden mdm:items-start mdm:p-2 icons">
+            <li><a href="#"><img src="images/yt.png"></a></li>
+            <li><a href="#"><img src="images/snap.png"></a></li>
+            <li><a href="#"><img src="images/twitter.png"></a></li>
+        </ul>
+    </nav>
+
+    <div class="flex flex-row flex-wrap items-start justify-between text-white mdm:flex-col mdm:items-stretch content">
+
+        <div class="flex flex-col gap-2 firsthalf">
+            <div class="top">
+                <div class="jasonimg">
+                    <img src="images/jasonheader.png" alt="Jason">
+                </div>
+            </div>
+
+            <div class="flex flex-row gap-2 mdm:flex-col bottom">
+                <div class="grid grid-cols-[auto_1fr] gap-0 h-[580px] w-full mdm:grid-cols-[1fr] mdm:bg-transparent mdm:h-auto anniversary">
+                    <div class="mv">
+                        <img src="images/jasonmovie.png" alt="Friday the 13th Movie Poster">
+                    </div>
+
+                    <div class="mv-content">
+                        <h2 class="items-center mb-4 text-center">30th Anniversary</h2>
+                        <p>Hair-raising decapitated at est. Death bruises moon torture demons devil or vampire werewolf wind. In horrifying, fear is gnarled murder, ominous eerie Serial killer sinister, with sick chilling agony shaking heart pumping.</p>
+
+                        <div class="flex flex-row mdm:justify-start mv-info">
+                            <div class="br">
+                                <img src="images/bluray.png" alt="Blu-ray Cover">
+                            </div>
+                            <div class="br-content">
+                                <a href="#">Purchase on Amazon</a>
+                                <h3>$19.99</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flag">
+                    <img src="images/flag.png">
+                    <p>Hair-raising decapitated at est. Death bruises moon torture demons devil or vampire werewolf wind. In horrifying, fear is gnarled murder, ominous eerie Serial killer sinister, with sick chilling agony shaking heart pumping.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col mdm:mt-4 secondhalf">
+            <div class="flex flex-col w-full items-center campsign">
+                <img src="images/sign.png">
+                <div class="dates">
+                    <p><span class="date">1979</span> <span class="hyphen">-</span> Pain burn. Demons in fallen angel non terror decomposed rotten teeth. Captive Agony deteriorated, fatal or chilling is, grotesque Halloween exorcism. screams exorcism ooze.</p>
+            
+                    <p><span class="date">1984</span> <span class="hyphen">-</span> Agony deteriorated, fatal or chilling is, grotesque Halloween exorcism. screams exorcism ooze</p>
+            
+                    <p><span class="date">2020</span> <span class="hyphen">-</span> Pain burn. Demons in fallen angel non terror decomposed rotten teeth. Captive Agony deteriorated, fatal or chilling is, grotesque Halloween exorcism. screams exorcism ooze.</p>
+                </div>
+                <img class="underwater" src="images/underwater.png">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h1>FRIDAY THE 13TH Trademark of New Line Productions, Inc.</h1>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

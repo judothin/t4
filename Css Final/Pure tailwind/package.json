@@ -1,0 +1,16 @@
+{
+  "name": "pure-css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build:css": "tailwindcss build tailwind.css -o dist/tailwind.css",
+    "watch:css": "tailwindcss build tailwind.css -o dist/tailwind.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.4.12"
+  }
+}

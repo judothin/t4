@@ -6,21 +6,17 @@ body {
 }
 
 /* Navbar Styles */
-.navbar {
-    height: 100px;
+#navbar {
     display: flex;
     background-color: #000000;
     color: #BB0908;
-    padding: 10px;
-    justify-content: space-between;
-    align-items: center;
 }
 
-.navbar h2 {
+#navbar h2 {
     margin-left: 10px;
     font-weight: lighter;
     font-size: 48px;
-    margin-top: 90px;
+    margin-top: 30px;
 }
 
 /* Unordered List Styles */
@@ -146,8 +142,8 @@ ul img {
 }
 
 .mv-content {
-    width: 80%;
-    padding: 00px 45px;
+    width: 100%;
+    padding: 10px 30px;
 }
 
 .mv-info {
