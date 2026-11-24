@@ -35,9 +35,9 @@ function PlayerPanel({ idx, player, opp, name, target, dispatch, flipped, winner
     <motion.section
       className={`panel glass p${idx + 1} ${winner === idx ? 'winner' : ''}`}
       style={{ '--c': COLORS[idx], flexGrow: grow }}
-      initial={{ opacity: 0, y: idx ? 18 : -18 }}
-      animate={{ opacity: 1, y: 0, rotate: flipped ? 180 : 0 }}
-      transition={{ ...soft, delay: 0.05 + idx * 0.05, rotate: { ...soft, delay: 0 } }}
+      initial={false}
+      animate={{ rotate: flipped ? 180 : 0 }}
+      transition={soft}
     >
       <header className="panel-top">
         <h2 className="name">{name}</h2>
@@ -211,8 +211,6 @@ export default function Binho({ onExit }) {
             <motion.nav
               className="dock glass"
               aria-label="Match controls"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1, transition: { ...spring, delay: 0.14 } }}
             >
               <motion.button whileTap={{ scale: 0.85 }} className="dock-btn" onClick={onExit} aria-label="All games">
                 <svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" /></svg>

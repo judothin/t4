@@ -7,9 +7,9 @@ export const soft = { type: 'spring', stiffness: 240, damping: 30 }
 export const snappy = { type: 'spring', stiffness: 600, damping: 38 }
 
 export const screen = {
-  initial: { opacity: 0, scale: 0.98, y: 12 },
-  animate: { opacity: 1, scale: 1, y: 0, transition: { ...soft, opacity: { duration: 0.28, ease: 'easeOut' } } },
-  exit: { opacity: 0, scale: 0.99, transition: { duration: 0.2, ease: 'easeIn' } },
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { duration: 0.22, ease: 'easeOut' } },
+  exit: { opacity: 0, transition: { duration: 0.16, ease: 'easeIn' } },
 }
 
 /** Number that rolls up/down like an odometer when it changes. */
