@@ -61,7 +61,12 @@ export default function CoinToss({ carded, caller, onDone, onCancel }) {
         </div>
       </div>
 
-      <div className="coin-stage">
+      <motion.div
+        className="coin-stage"
+        initial={{ opacity: 0, scale: 0.6 }}
+        animate={{ opacity: 1, scale: 1, transition: { ...spring, delay: 0.12 } }}
+        exit={{ opacity: 0, transition: { duration: 0.08 } }}
+      >
         <div className={`coin ${result ? '' : 'idle'}`} ref={coinRef}>
           {Array.from({ length: 9 }, (_, i) => (
             <i key={i} className="coin-edge" style={{ '--z': `${(i - 4) * 0.9}px` }} />
@@ -70,10 +75,10 @@ export default function CoinToss({ carded, caller, onDone, onCancel }) {
           <div className="coin-face tails"><span>T</span></div>
         </div>
         <div className="coin-shadow" ref={shadowRef} />
-      </div>
+      </motion.div>
 
       <AutoHeight className="coin-steps">
-        <AnimatePresence mode="popLayout" initial={false}>
+        <AnimatePresence mode="wait" initial={false}>
           {stage === 'call' && (
             <motion.div key="call" className="step" {...step}>
               <p className="sheet-copy">
@@ -88,9 +93,9 @@ export default function CoinToss({ carded, caller, onDone, onCancel }) {
           )}
 
           {stage === 'flying' && (
-            <motion.p key="flying" className="sheet-copy muted step" {...step}>
-              {caller.name} called <b>{call}</b>…
-            </motion.p>
+            <motion.div key="flying" className="step flying" {...step}>
+              <p className="sheet-copy muted">{caller.name} called <b>{call}</b>…</p>
+            </motion.div>
           )}
 
           {stage === 'result' && (

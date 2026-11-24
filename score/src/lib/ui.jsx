@@ -7,9 +7,9 @@ export const soft = { type: 'spring', stiffness: 240, damping: 30 }
 export const snappy = { type: 'spring', stiffness: 600, damping: 38 }
 
 export const screen = {
-  initial: { opacity: 0, scale: 0.97, y: 16 },
-  animate: { opacity: 1, scale: 1, y: 0, transition: soft },
-  exit: { opacity: 0, scale: 1.015, y: -8, transition: { duration: 0.18, ease: [0.4, 0, 1, 1] } },
+  initial: { opacity: 0, scale: 0.98, y: 12 },
+  animate: { opacity: 1, scale: 1, y: 0, transition: { ...soft, opacity: { duration: 0.28, ease: 'easeOut' } } },
+  exit: { opacity: 0, scale: 0.99, transition: { duration: 0.2, ease: 'easeIn' } },
 }
 
 /** Number that rolls up/down like an odometer when it changes. */
@@ -25,14 +25,14 @@ export function Roll({ value, className }) {
           className={className}
           custom={dir}
           variants={{
-            enter: (d) => ({ y: `${60 * d}%`, opacity: 0, scale: 0.85 }),
+            enter: (d) => ({ y: `${45 * d}%`, opacity: 0, scale: 0.9 }),
             center: { y: '0%', opacity: 1, scale: 1 },
-            exit: (d) => ({ y: `${-60 * d}%`, opacity: 0, scale: 0.85 }),
+            exit: (d) => ({ y: `${-45 * d}%`, opacity: 0, scale: 0.9 }),
           }}
           initial="enter"
           animate="center"
           exit="exit"
-          transition={spring}
+          transition={{ ...spring, opacity: { duration: 0.16, ease: 'easeOut' } }}
         >
           {value}
         </motion.span>

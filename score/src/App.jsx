@@ -65,7 +65,7 @@ export default function App() {
   return (
     <MotionConfig reducedMotion="user" transition={spring}>
       <Backdrop />
-      <AnimatePresence mode="wait" initial={false}>
+      <AnimatePresence initial={false}>
         {game ? (
           <game.component key={game.id} onExit={() => setGameId(null)} />
         ) : (

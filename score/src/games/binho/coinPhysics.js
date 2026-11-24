@@ -14,7 +14,7 @@ export function tossCoin({ coin, shadow, result, reduced = false, onImpact, onDo
   const SPINS = reduced ? 1 : 7
   const HOP = reduced ? 0 : 0.26
   const HOP_H = 14
-  const SETTLE = reduced ? 0.15 : 0.8
+  const SETTLE = reduced ? 0.15 : 0.6
 
   const end = SPINS * 360 + (result === 'tails' ? 180 : 0)
   const lean = (Math.random() * 2 - 1) * 9 // the toss is never perfectly straight
@@ -26,6 +26,7 @@ export function tossCoin({ coin, shadow, result, reduced = false, onImpact, onDo
   let start = 0
   let raf = 0
   let impacts = 0
+  let announced = false
 
   const apply = (y, scale, z, x, w) => {
     coin.style.transform =
@@ -64,12 +65,14 @@ export function tossCoin({ coin, shadow, result, reduced = false, onImpact, onDo
       // settle: precessing wobble, amplitude decays while its frequency rises
       const u = t - t3
       const k = u / SETTLE
+      // reveal the result while it's still settling — no dead air
+      if (!announced && k > 0.25) { announced = true; onDone?.() }
       const amp = 11 * Math.exp(-4 * k) * (1 - k)
       const phase = 2 * Math.PI * (3 * u + 7 * u * u)
       apply(0, 1, 0, end + amp * Math.sin(phase), amp * Math.cos(phase))
     } else {
       apply(0, 1, 0, end, 0)
-      onDone?.()
+      if (!announced) onDone?.()
       return
     }
     raf = requestAnimationFrame(frame)

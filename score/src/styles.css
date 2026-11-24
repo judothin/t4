@@ -460,6 +460,8 @@ input { font: inherit; color: inherit; }
 .setup-title { margin: 2px 0 0; font-size: 36px; font-weight: 800; letter-spacing: -0.05em; line-height: .95; font-variation-settings: 'wdth' 80; }
 
 .sides { display: flex; flex-direction: column; gap: 10px; }
+.sides > section:nth-of-type(2) { order: 2; }
+.sides > .vs { order: 1; }
 .side-card {
   --c: var(--p1);
   padding: 14px 16px;
@@ -545,11 +547,11 @@ input { font: inherit; color: inherit; }
 .game-root { position: fixed; top: 0; left: 0; right: 0; height: var(--app-h, 100dvh); z-index: 1; }
 
 /* coin sheet steps */
-.coin-steps { padding: 2px 4px 10px; }
+.coin-steps { padding: 2px 4px 10px; min-height: 196px; display: flex; flex-direction: column; }
+.step.flying { flex: 1; justify-content: center; align-items: center; text-align: center; }
 .red-sheet .auto-h { margin: 0 -4px -10px; }
 .step { display: flex; flex-direction: column; gap: 14px; }
 .result-line { flex-wrap: wrap; }
 .verdict { margin-left: auto; align-self: center; padding: 6px 12px; border-radius: 99px; font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
 .verdict.hit { background: rgba(61, 255, 181, .14); color: #7dffcc; box-shadow: inset 0 0 0 1px rgba(61,255,181,.35); }
 .verdict.miss { background: rgba(255, 255, 255, .08); color: var(--ink-2); box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
-.btn, .dock-btn, .vs, .game-card, .swatch { will-change: transform; }

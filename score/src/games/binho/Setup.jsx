@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import { AnimatePresence, LayoutGroup, motion } from 'motion/react'
+import { AnimatePresence, motion } from 'motion/react'
 import { PALETTE, loadRoster, forgetPlayer } from '../../lib/players.js'
 import { buzz } from '../../lib/storage.js'
 import { Seg, screen, spring, soft } from '../../lib/ui.jsx'
 
 const TARGETS = [5, 7, 10, 11]
 
-function SideCard({ slot, side, other, roster, onChange, onForget }) {
+function SideCard({ slot, side, other, roster, onChange, onForget, squeeze }) {
   const pickPlayer = (p) => {
     buzz(8)
     const colorFree = p.color && p.color !== other.color
@@ -15,14 +15,19 @@ function SideCard({ slot, side, other, roster, onChange, onForget }) {
 
   return (
     <motion.section
-      layout
-      transition={soft}
       className="side-card glass"
       style={{ '--c': side.color }}
       initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
+      animate={{
+        opacity: 1,
+        // during a swap both cards squeeze toward the middle, trade, and spring back
+        x: squeeze?.axis === 'x' ? squeeze.d * (slot === 0 ? 1 : -1) : 0,
+        y: squeeze?.axis === 'y' ? squeeze.d * (slot === 0 ? 1 : -1) : 0,
+        scale: squeeze ? 0.955 : 1,
+      }}
+      transition={squeeze ? { type: 'spring', stiffness: 520, damping: 30 } : { ...soft, delay: 0.04 + slot * 0.06 }}
     >
-      <motion.p layout="position" className="eyebrow">Side {slot === 0 ? 'A' : 'B'}</motion.p>
+      <p className="eyebrow">Side {slot === 0 ? 'A' : 'B'}</p>
       <input
         className="side-name"
         value={side.name}
@@ -95,7 +100,7 @@ function SideCard({ slot, side, other, roster, onChange, onForget }) {
               transition={spring}
               onClick={() => { buzz(6); onChange({ ...side, color: c.hex }) }}
             >
-              {on && <motion.span layoutId={`ring-${side.id}`} className="swatch-ring" transition={spring} />}
+              {on && <motion.span layoutId={`ring-${slot}`} className="swatch-ring" transition={spring} />}
             </motion.button>
           )
         })}
@@ -107,6 +112,16 @@ function SideCard({ slot, side, other, roster, onChange, onForget }) {
 export default function Setup({ sides, setSides, target, setTarget, onStart, onExit }) {
   const [roster, setRoster] = useState(loadRoster)
   const [spin, setSpin] = useState(0)
+  const [squeeze, setSqueeze] = useState(null)
+  const swap = () => {
+    if (squeeze) return
+    buzz(10)
+    setSpin((s) => s + 180)
+    const wide = matchMedia('(min-width: 760px)').matches
+    setSqueeze({ axis: wide ? 'x' : 'y', d: 6 })
+    setTimeout(() => setSides([sides[1], sides[0]]), 140)
+    setTimeout(() => setSqueeze(null), 200)
+  }
   const setSide = (i) => (v) => setSides(sides.map((x, j) => (j === i ? v : x)))
   const forget = (name) => setRoster(forgetPlayer(name))
 
@@ -122,41 +137,26 @@ export default function Setup({ sides, setSides, target, setTarget, onStart, onE
         </div>
       </header>
 
-      <LayoutGroup>
-        <div className="sides">
-          {/* Cards are keyed by side id, so "swap" physically moves them past each other. */}
-          {[0, 1].flatMap((slot) => {
-            const card = (
-              <SideCard
-                key={sides[slot].id}
-                slot={slot}
-                side={sides[slot]}
-                other={sides[1 - slot]}
-                roster={roster}
-                onChange={setSide(slot)}
-                onForget={forget}
-              />
-            )
-            if (slot === 1) return [card]
-            return [
-              card,
-              <motion.button
-                key="vs"
-                layout
-                className="vs glass"
-                whileTap={{ scale: 0.92 }}
-                onClick={() => { buzz(10); setSpin((s) => s + 180); setSides([sides[1], sides[0]]) }}
-                aria-label="Swap sides"
-              >
-                <span>vs</span>
-                <motion.svg viewBox="0 0 24 24" animate={{ rotate: spin }} transition={soft}>
-                  <path d="M7 4v16M7 20l-3-3M7 20l3-3M17 20V4M17 4l-3 3M17 4l3 3" />
-                </motion.svg>
-              </motion.button>,
-            ]
-          })}
-        </div>
-      </LayoutGroup>
+      <div className="sides">
+        {[0, 1].map((slot) => (
+          <SideCard
+            key={slot}
+            slot={slot}
+            side={sides[slot]}
+            other={sides[1 - slot]}
+            roster={roster}
+            onChange={setSide(slot)}
+            onForget={forget}
+            squeeze={squeeze}
+          />
+        ))}
+        <motion.button className="vs glass" whileTap={{ scale: 0.9 }} onClick={swap} aria-label="Swap sides">
+          <span>vs</span>
+          <motion.svg viewBox="0 0 24 24" animate={{ rotate: spin }} transition={soft}>
+            <path d="M7 4v16M7 20l-3-3M7 20l3-3M17 20V4M17 4l-3 3M17 4l3 3" />
+          </motion.svg>
+        </motion.button>
+      </div>
 
       <motion.div
         className="setup-foot"

@@ -9,7 +9,6 @@ import { Roll, Seg, Sheet, AutoHeight, screen, spring, soft } from '../../lib/ui
 
 const COLORS = ['var(--p1)', 'var(--p2)']
 const TARGETS = [5, 7, 10, 11]
-const clamp = (v, a, b) => Math.min(b, Math.max(a, v))
 
 const defaultSides = () => {
   const old = load('binho:names', null) // migrate from v0.1
@@ -29,30 +28,28 @@ function PlayerPanel({ idx, player, opp, name, target, dispatch, flipped, winner
     dispatch({ type: 'GOAL', player: idx })
   }
   const onYellow = player.yellows > 0
-  // The leader's panel grows as they pull ahead; the winner's takes the stage.
-  const grow =
-    winner === idx ? 1.55 : winner != null ? 0.9 : 1 + clamp((player.score - opp.score) * 0.045, -0.22, 0.22)
+  // The winner's panel takes the stage.
+  const grow = winner === idx ? 1.55 : winner != null ? 0.9 : 1
 
   return (
     <motion.section
       className={`panel glass p${idx + 1} ${winner === idx ? 'winner' : ''}`}
       style={{ '--c': COLORS[idx], flexGrow: grow }}
-      initial={{ opacity: 0, y: idx ? 30 : -30, scale: 0.97 }}
-      animate={{ opacity: 1, y: 0, scale: 1, rotate: flipped ? 180 : 0 }}
-      transition={{ ...soft, delay: idx * 0.06, rotate: soft }}
+      initial={{ opacity: 0, y: idx ? 18 : -18 }}
+      animate={{ opacity: 1, y: 0, rotate: flipped ? 180 : 0 }}
+      transition={{ ...soft, delay: 0.05 + idx * 0.05, rotate: { ...soft, delay: 0 } }}
     >
       <header className="panel-top">
         <h2 className="name">{name}</h2>
-        <motion.div className="discipline" aria-label="Cards" layout transition={spring}>
-          <motion.span layout className={`card-chip yellow ${onYellow ? 'on' : ''}`} title="Yellow (warning)" />
-          <motion.span layout className={`card-chip red ${player.reds ? 'on' : ''}`} title="Reds">
+        <div className="discipline" aria-label="Cards">
+          <span className={`card-chip yellow ${onYellow ? 'on' : ''}`} title="Yellow (warning)" />
+          <span className={`card-chip red ${player.reds ? 'on' : ''}`} title="Reds">
             {player.reds > 0 && <Roll value={player.reds} className="chip-n" />}
-          </motion.span>
+          </span>
           <AnimatePresence initial={false}>
             {player.pegsOut > 0 && (
               <motion.span
                 key="pegs"
-                layout
                 className="pegs"
                 initial={{ opacity: 0, scale: 0.6, x: 10 }}
                 animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -62,7 +59,7 @@ function PlayerPanel({ idx, player, opp, name, target, dispatch, flipped, winner
               </motion.span>
             )}
           </AnimatePresence>
-        </motion.div>
+        </div>
       </header>
 
       <motion.button className="score-hit" onClick={goal} whileTap={{ scale: 0.95 }} aria-label={`Goal for ${name}`}>
@@ -183,7 +180,7 @@ export default function Binho({ onExit }) {
 
   return (
     <motion.div className="game-root" {...screen}>
-      <AnimatePresence mode="wait" initial={false}>
+      <AnimatePresence initial={false}>
         {phase === 'setup' ? (
           <Setup
             key="setup"
