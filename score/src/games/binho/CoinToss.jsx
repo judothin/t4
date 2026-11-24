@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { tossCoin } from './coinPhysics.js'
 import { buzz } from '../../lib/storage.js'
 
 const fairFlip = () => {
@@ -11,6 +12,23 @@ export default function CoinToss({ carded, caller, onDone, onCancel }) {
   const [call, setCall] = useState(null)
   const [result, setResult] = useState(null)
   const [landed, setLanded] = useState(false)
+  const coinRef = useRef(null)
+  const shadowRef = useRef(null)
+
+  useEffect(() => {
+    if (!result) return
+    return tossCoin({
+      coin: coinRef.current,
+      shadow: shadowRef.current,
+      result,
+      reduced: matchMedia('(prefers-reduced-motion: reduce)').matches,
+      onImpact: (n) => buzz(n === 1 ? 35 : 15),
+      onDone: () => {
+        setLanded(true)
+        buzz([30, 40, 30])
+      },
+    })
+  }, [result])
 
   const pick = (side) => {
     buzz(20)
@@ -33,17 +51,14 @@ export default function CoinToss({ carded, caller, onDone, onCancel }) {
         </div>
 
         <div className="coin-stage">
-          <div
-            className={`coin ${result ? 'flipping' : 'idle'} ${result ? `to-${result}` : ''}`}
-            onAnimationEnd={() => {
-              setLanded(true)
-              buzz([30, 40, 30])
-            }}
-          >
+          <div className={`coin ${result ? '' : 'idle'}`} ref={coinRef}>
+            {Array.from({ length: 9 }, (_, i) => (
+              <i key={i} className="coin-edge" style={{ '--z': `${(i - 4) * 0.9}px` }} />
+            ))}
             <div className="coin-face heads"><span>H</span></div>
             <div className="coin-face tails"><span>T</span></div>
           </div>
-          <div className={`coin-shadow ${result ? 'flipping' : ''}`} />
+          <div className="coin-shadow" ref={shadowRef} />
         </div>
 
         {!call && (
