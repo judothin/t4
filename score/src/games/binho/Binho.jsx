@@ -1,12 +1,25 @@
 import { useEffect, useReducer, useState } from 'react'
 import { reducer, freshMatch } from './reducer.js'
 import CoinToss from './CoinToss.jsx'
+import Setup from './Setup.jsx'
 import { load, save, useStored, buzz } from '../../lib/storage.js'
+import { PALETTE, rememberPlayers } from '../../lib/players.js'
 
 const COLORS = ['var(--p1)', 'var(--p2)']
 const TARGETS = [5, 7, 10, 11]
 
-function PlayerPanel({ idx, player, name, onName, target, dispatch, flipped, isWinner, done }) {
+const defaultSides = () => {
+  const old = load('binho:names', null) // migrate from v0.1
+  return [
+    { name: old?.[0] ?? '', color: PALETTE[0].hex },
+    { name: old?.[1] ?? '', color: PALETTE[1].hex },
+  ]
+}
+
+const inProgress = (m) =>
+  m.players.some((p) => p.score || p.yellows || p.reds || p.pegsOut) || m.pendingRed != null
+
+function PlayerPanel({ idx, player, name, target, dispatch, flipped, isWinner, done }) {
   const [bump, setBump] = useState(0)
   const goal = () => {
     if (done) return
@@ -14,6 +27,7 @@ function PlayerPanel({ idx, player, name, onName, target, dispatch, flipped, isW
     setBump((b) => b + 1)
     dispatch({ type: 'GOAL', player: idx })
   }
+  const onYellow = player.yellows > 0
 
   return (
     <section
@@ -21,17 +35,9 @@ function PlayerPanel({ idx, player, name, onName, target, dispatch, flipped, isW
       style={{ '--c': COLORS[idx] }}
     >
       <header className="panel-top">
-        <input
-          className="name"
-          value={name}
-          onChange={(e) => onName(e.target.value)}
-          onFocus={(e) => e.target.select()}
-          maxLength={18}
-          spellCheck={false}
-          aria-label={`Player ${idx + 1} name`}
-        />
+        <h2 className="name">{name}</h2>
         <div className="discipline" aria-label="Cards">
-          <span className={`card-chip yellow ${player.yellows ? 'on' : ''}`} title="Yellow (warning)" />
+          <span className={`card-chip yellow ${onYellow ? 'on' : ''}`} title="Yellow (warning)" />
           <span className={`card-chip red ${player.reds ? 'on' : ''}`} title="Reds">
             {player.reds > 0 && <i>{player.reds}</i>}
           </span>
@@ -59,13 +65,13 @@ function PlayerPanel({ idx, player, name, onName, target, dispatch, flipped, isW
           −
         </button>
         <button
-          className="btn glass-btn out"
+          className={`btn glass-btn out ${onYellow ? 'danger' : ''}`}
           onClick={() => { buzz(25); dispatch({ type: 'OUT', player: idx }) }}
           disabled={done}
+          aria-label={onYellow ? 'Out — second yellow, red card' : 'Out — yellow card'}
         >
-          <span className="card-chip yellow on sm" aria-hidden />
+          <span className={`card-chip on sm ${onYellow ? 'red' : 'yellow'}`} aria-hidden />
           Out
-          <small>{player.yellows ? 'next = red' : 'warning'}</small>
         </button>
         <button className="btn solid-btn goal" onClick={goal} disabled={done}>
           Goal
@@ -76,23 +82,50 @@ function PlayerPanel({ idx, player, name, onName, target, dispatch, flipped, isW
 }
 
 export default function Binho({ onExit }) {
-  const [names, setNames] = useStored('binho:names', ['Player 1', 'Player 2'])
+  const [sides, setSides] = useStored('binho:sides', defaultSides)
   const [faceOff, setFaceOff] = useStored('binho:faceoff', false)
   const [h, dispatch] = useReducer(reducer, null, () => ({
     past: [],
     present: load('binho:match', null) ?? freshMatch(load('binho:target', 7)),
   }))
+  const [phase, setPhase] = useState(() => (inProgress(h.present) ? 'play' : 'setup'))
   const [menu, setMenu] = useState(false)
   const m = h.present
 
   useEffect(() => save('binho:match', m), [m])
   useEffect(() => save('binho:target', m.target), [m.target])
 
-  const setName = (i) => (v) => setNames((n) => n.map((x, j) => (j === i ? v : x)))
-  const label = (i) => names[i]?.trim() || `Player ${i + 1}`
+  // Theme the whole app (background glow included) with the chosen colors.
+  useEffect(() => {
+    const root = document.documentElement.style
+    root.setProperty('--p1', sides[0].color)
+    root.setProperty('--p2', sides[1].color)
+    return () => { root.removeProperty('--p1'); root.removeProperty('--p2') }
+  }, [sides])
+
+  const label = (i) => sides[i].name.trim() || `Player ${i + 1}`
   const done = m.winner != null
 
-  const swap = () => setNames(([a, b]) => [b, a])
+  const start = () => {
+    buzz(20)
+    rememberPlayers(sides)
+    dispatch({ type: 'NEW' })
+    setPhase('play')
+  }
+  const toSetup = () => { setMenu(false); setPhase('setup') }
+
+  if (phase === 'setup') {
+    return (
+      <Setup
+        sides={sides}
+        setSides={setSides}
+        target={m.target}
+        setTarget={(t) => dispatch({ type: 'NEW', target: t })}
+        onStart={start}
+        onExit={onExit}
+      />
+    )
+  }
 
   return (
     <div className={`binho ${faceOff ? 'face-off' : ''}`}>
@@ -101,8 +134,7 @@ export default function Binho({ onExit }) {
           key={i}
           idx={i}
           player={m.players[i]}
-          name={names[i]}
-          onName={setName(i)}
+          name={label(i)}
           target={m.target}
           dispatch={dispatch}
           flipped={faceOff && i === 0}
@@ -124,7 +156,7 @@ export default function Binho({ onExit }) {
         <button className="dock-btn" onClick={() => setMenu(true)} aria-label="Settings">
           <svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6" /><circle cx="12" cy="12" r="1.6" /><circle cx="19" cy="12" r="1.6" /></svg>
         </button>
-        <button className="dock-btn" onClick={() => dispatch({ type: 'NEW' })} aria-label="New match">
+        <button className="dock-btn" onClick={toSetup} aria-label="New match">
           <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.34-5.66" /><path d="M20 4v5h-5" /></svg>
         </button>
       </nav>
@@ -151,6 +183,7 @@ export default function Binho({ onExit }) {
               <button className="btn glass-btn" onClick={() => dispatch({ type: 'UNDO' })}>Undo goal</button>
               <button className="btn solid-btn" onClick={() => dispatch({ type: 'NEW' })}>Rematch</button>
             </div>
+            <button className="btn text-btn" onClick={toSetup}>New players</button>
           </div>
         </div>
       )}
@@ -184,9 +217,9 @@ export default function Binho({ onExit }) {
             </label>
 
             <div className="call-row">
-              <button className="btn glass-btn" onClick={swap}>Swap names</button>
+              <button className="btn glass-btn" onClick={toSetup}>Change players</button>
               <button className="btn glass-btn" onClick={() => { dispatch({ type: 'NEW' }); setMenu(false) }}>
-                Reset match
+                Reset score
               </button>
             </div>
 

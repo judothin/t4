@@ -24,7 +24,7 @@ It runs full-screen and works offline after the first load. `base: './'` means `
 - Every action can be undone (↶). Undo after a red rolls back the whole out → coin toss.
 - **Face-off mode** flips the top panel 180° so both players can read it across the board.
 
-Player names, target and the live match are saved in `localStorage`.
+Before each match a setup screen lets each side pick a saved player (or type a new one) and a color; the colors theme the board and background. Saved players, sides, target and the live match are kept in `localStorage`.
 
 ## Adding a game
 Create `src/games/<id>/<Game>.jsx` and register it in `src/games/registry.js`.
