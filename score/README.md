@@ -28,3 +28,7 @@ Player names, target and the live match are saved in `localStorage`.
 
 ## Adding a game
 Create `src/games/<id>/<Game>.jsx` and register it in `src/games/registry.js`.
+
+## Deploy (Vercel)
+Import the repo at vercel.com/new and set **Root Directory → `score`**. Everything else comes from `score/vercel.json`.
+Every push to `main` redeploys; other branches get preview URLs.
