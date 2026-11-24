@@ -18,6 +18,9 @@
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 html, body, #root { height: 100%; }
+/* --app-h is set from JS when launched from the home screen (see main.jsx):
+   iOS shrinks the viewport by the status-bar height there, leaving a bare strip at the bottom. */
+html { background: var(--bg); min-height: var(--app-h, 100%); }
 body {
   margin: 0;
   background: var(--bg);
@@ -34,7 +37,7 @@ button:disabled { cursor: default; }
 input { font: inherit; color: inherit; }
 
 /* ───────────── backdrop ───────────── */
-.backdrop { position: fixed; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+.backdrop { position: fixed; top: 0; left: 0; right: 0; height: calc(var(--app-h, 100lvh) + 120px); overflow: hidden; z-index: 0; pointer-events: none; }
 .blob {
   position: absolute;
   border-radius: 50%;
@@ -102,7 +105,7 @@ input { font: inherit; color: inherit; }
 /* ───────────── home ───────────── */
 .home {
   position: relative; z-index: 1;
-  min-height: 100%;
+  min-height: var(--app-h, 100%);
   max-width: 560px;
   margin: 0 auto;
   padding: calc(env(safe-area-inset-top) + 48px) 20px calc(env(safe-area-inset-bottom) + 28px);
@@ -154,7 +157,7 @@ input { font: inherit; color: inherit; }
 
 /* ───────────── binho board ───────────── */
 .binho {
-  position: fixed; inset: 0; z-index: 1;
+  position: fixed; top: 0; left: 0; right: 0; height: var(--app-h, 100dvh); z-index: 1;
   display: grid;
   grid-template-rows: minmax(0, 1fr) auto minmax(0, 1fr);
   gap: 10px;
