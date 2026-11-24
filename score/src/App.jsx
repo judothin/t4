@@ -1,5 +1,7 @@
+import { AnimatePresence, MotionConfig, motion } from 'motion/react'
 import { GAMES } from './games/registry.js'
 import { useStored } from './lib/storage.js'
+import { screen, spring } from './lib/ui.jsx'
 
 function Backdrop() {
   return (
@@ -22,26 +24,37 @@ function Backdrop() {
 
 function Home({ onPick }) {
   return (
-    <main className="home">
+    <motion.main className="home" {...screen}>
       <header className="home-head">
-        <p className="eyebrow">Scorekeeper · v0.1</p>
+        <p className="eyebrow">Scorekeeper · v0.2</p>
         <h1 className="wordmark">score<span>.</span></h1>
         <p className="home-sub">Pick a game. Keep it honest.</p>
       </header>
       <ul className="game-list">
         {GAMES.map((g, i) => (
-          <li key={g.id} style={{ '--i': i }}>
-            <button className={`game-card glass ${g.component ? '' : 'soon'}`} disabled={!g.component} onClick={() => onPick(g.id)}>
+          <motion.li
+            key={g.id}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0, transition: { ...spring, delay: 0.08 + i * 0.06 } }}
+          >
+            <motion.button
+              className={`game-card glass ${g.component ? '' : 'soon'}`}
+              disabled={!g.component}
+              onClick={() => onPick(g.id)}
+              whileHover={g.component ? { y: -3, scale: 1.01 } : undefined}
+              whileTap={g.component ? { scale: 0.97 } : undefined}
+              transition={spring}
+            >
               <span className="game-index">0{i + 1}</span>
               <span className="game-name">{g.name}</span>
               <span className="game-blurb">{g.blurb}</span>
               <span className="game-arrow" aria-hidden>{g.component ? '→' : '·'}</span>
-            </button>
-          </li>
+            </motion.button>
+          </motion.li>
         ))}
       </ul>
       <p className="home-foot">Tip: Share → Add to Home Screen for the full-screen app.</p>
-    </main>
+    </motion.main>
   )
 }
 
@@ -50,9 +63,15 @@ export default function App() {
   const game = GAMES.find((g) => g.id === gameId && g.component)
 
   return (
-    <>
+    <MotionConfig reducedMotion="user" transition={spring}>
       <Backdrop />
-      {game ? <game.component onExit={() => setGameId(null)} /> : <Home onPick={setGameId} />}
-    </>
+      <AnimatePresence mode="wait" initial={false}>
+        {game ? (
+          <game.component key={game.id} onExit={() => setGameId(null)} />
+        ) : (
+          <Home key="home" onPick={setGameId} />
+        )}
+      </AnimatePresence>
+    </MotionConfig>
   )
 }

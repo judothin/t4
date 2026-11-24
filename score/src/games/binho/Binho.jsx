@@ -1,88 +1,146 @@
 import { useEffect, useReducer, useState } from 'react'
+import { AnimatePresence, motion } from 'motion/react'
 import { reducer, freshMatch } from './reducer.js'
 import CoinToss from './CoinToss.jsx'
 import Setup from './Setup.jsx'
 import { load, save, useStored, buzz } from '../../lib/storage.js'
 import { PALETTE, rememberPlayers } from '../../lib/players.js'
+import { Roll, Seg, Sheet, AutoHeight, screen, spring, soft } from '../../lib/ui.jsx'
 
 const COLORS = ['var(--p1)', 'var(--p2)']
 const TARGETS = [5, 7, 10, 11]
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v))
 
 const defaultSides = () => {
   const old = load('binho:names', null) // migrate from v0.1
   return [
-    { name: old?.[0] ?? '', color: PALETTE[0].hex },
-    { name: old?.[1] ?? '', color: PALETTE[1].hex },
+    { id: 'a', name: old?.[0] ?? '', color: PALETTE[0].hex },
+    { id: 'b', name: old?.[1] ?? '', color: PALETTE[1].hex },
   ]
 }
 
 const inProgress = (m) =>
   m.players.some((p) => p.score || p.yellows || p.reds || p.pegsOut) || m.pendingRed != null
 
-function PlayerPanel({ idx, player, name, target, dispatch, flipped, isWinner, done }) {
-  const [bump, setBump] = useState(0)
+function PlayerPanel({ idx, player, opp, name, target, dispatch, flipped, winner, done }) {
   const goal = () => {
     if (done) return
     buzz(15)
-    setBump((b) => b + 1)
     dispatch({ type: 'GOAL', player: idx })
   }
   const onYellow = player.yellows > 0
+  // The leader's panel grows as they pull ahead; the winner's takes the stage.
+  const grow =
+    winner === idx ? 1.55 : winner != null ? 0.9 : 1 + clamp((player.score - opp.score) * 0.045, -0.22, 0.22)
 
   return (
-    <section
-      className={`panel glass p${idx + 1} ${flipped ? 'flipped' : ''} ${isWinner ? 'winner' : ''}`}
-      style={{ '--c': COLORS[idx] }}
+    <motion.section
+      className={`panel glass p${idx + 1} ${winner === idx ? 'winner' : ''}`}
+      style={{ '--c': COLORS[idx], flexGrow: grow }}
+      initial={{ opacity: 0, y: idx ? 30 : -30, scale: 0.97 }}
+      animate={{ opacity: 1, y: 0, scale: 1, rotate: flipped ? 180 : 0 }}
+      transition={{ ...soft, delay: idx * 0.06, rotate: soft }}
     >
       <header className="panel-top">
         <h2 className="name">{name}</h2>
-        <div className="discipline" aria-label="Cards">
-          <span className={`card-chip yellow ${onYellow ? 'on' : ''}`} title="Yellow (warning)" />
-          <span className={`card-chip red ${player.reds ? 'on' : ''}`} title="Reds">
-            {player.reds > 0 && <i>{player.reds}</i>}
-          </span>
-          {player.pegsOut > 0 && <span className="pegs">−{player.pegsOut} peg{player.pegsOut > 1 ? 's' : ''}</span>}
-        </div>
+        <motion.div className="discipline" aria-label="Cards" layout transition={spring}>
+          <motion.span layout className={`card-chip yellow ${onYellow ? 'on' : ''}`} title="Yellow (warning)" />
+          <motion.span layout className={`card-chip red ${player.reds ? 'on' : ''}`} title="Reds">
+            {player.reds > 0 && <Roll value={player.reds} className="chip-n" />}
+          </motion.span>
+          <AnimatePresence initial={false}>
+            {player.pegsOut > 0 && (
+              <motion.span
+                key="pegs"
+                layout
+                className="pegs"
+                initial={{ opacity: 0, scale: 0.6, x: 10 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                exit={{ opacity: 0, scale: 0.6, x: 10 }}
+              >
+                −<Roll value={player.pegsOut} /> peg{player.pegsOut > 1 ? 's' : ''}
+              </motion.span>
+            )}
+          </AnimatePresence>
+        </motion.div>
       </header>
 
-      <button className="score-hit" onClick={goal} aria-label={`Goal for ${name}`}>
-        <span key={bump} className={`score ${bump ? 'pop' : ''}`}>{player.score}</span>
-      </button>
+      <motion.button className="score-hit" onClick={goal} whileTap={{ scale: 0.95 }} aria-label={`Goal for ${name}`}>
+        <Roll value={player.score} className="score" />
+      </motion.button>
 
       <div className="pips" aria-hidden>
-        {Array.from({ length: target }, (_, i) => (
-          <span key={i} className={i < player.score ? 'on' : ''} />
-        ))}
+        <AnimatePresence initial={false}>
+          {Array.from({ length: target }, (_, i) => (
+            <motion.span
+              key={i}
+              className={i < player.score ? 'on' : ''}
+              initial={{ scaleX: 0, opacity: 0 }}
+              animate={{ scaleX: 1, opacity: 1 }}
+              exit={{ scaleX: 0, opacity: 0 }}
+              transition={{ ...spring, delay: i * 0.015 }}
+            />
+          ))}
+        </AnimatePresence>
       </div>
 
       <div className="controls">
-        <button
+        <motion.button
           className="btn glass-btn icon"
+          whileTap={{ scale: 0.9 }}
           onClick={() => { buzz(8); dispatch({ type: 'UNGOAL', player: idx }) }}
           disabled={player.score === 0}
           aria-label="Remove goal"
         >
           −
-        </button>
-        <button
+        </motion.button>
+        <motion.button
           className={`btn glass-btn out ${onYellow ? 'danger' : ''}`}
+          whileTap={{ scale: 0.94 }}
           onClick={() => { buzz(25); dispatch({ type: 'OUT', player: idx }) }}
           disabled={done}
           aria-label={onYellow ? 'Out — second yellow, red card' : 'Out — yellow card'}
         >
-          <span className={`card-chip on sm ${onYellow ? 'red' : 'yellow'}`} aria-hidden />
+          <span className={`card-chip sm yellow on ${onYellow ? 'red' : ''}`} aria-hidden />
           Out
-        </button>
-        <button className="btn solid-btn goal" onClick={goal} disabled={done}>
+        </motion.button>
+        <motion.button className="btn solid-btn goal" whileTap={{ scale: 0.94 }} onClick={goal} disabled={done}>
           Goal
-        </button>
+        </motion.button>
       </div>
-    </section>
+    </motion.section>
+  )
+}
+
+function Rules({ target }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className="rules">
+      <button className={`rules-toggle ${open ? 'open' : ''}`} onClick={() => setOpen((o) => !o)}>
+        House rules <span aria-hidden>+</span>
+      </button>
+      <AutoHeight>
+        <AnimatePresence initial={false}>
+          {open && (
+            <motion.ul
+              initial={{ opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6, transition: { duration: 0.12 } }}
+            >
+              <li>Goal = 1 point. First to {target} wins.</li>
+              <li>Kick the ball out = yellow card. First one is a warning.</li>
+              <li>Second out = red. Coin toss — the opponent calls it.</li>
+              <li>Call it right: they choose which of your pegs comes out. Call it wrong: you choose.</li>
+            </motion.ul>
+          )}
+        </AnimatePresence>
+      </AutoHeight>
+    </div>
   )
 }
 
 export default function Binho({ onExit }) {
-  const [sides, setSides] = useStored('binho:sides', defaultSides)
+  const [sides, setSidesRaw] = useStored('binho:sides', defaultSides)
   const [faceOff, setFaceOff] = useStored('binho:faceoff', false)
   const [h, dispatch] = useReducer(reducer, null, () => ({
     past: [],
@@ -92,16 +150,25 @@ export default function Binho({ onExit }) {
   const [menu, setMenu] = useState(false)
   const m = h.present
 
+  // sides saved by older versions have no id
+  const sidesWithId = sides.map((s, i) => (s.id ? s : { ...s, id: 'ab'[i] }))
+  const setSides = setSidesRaw
+
   useEffect(() => save('binho:match', m), [m])
   useEffect(() => save('binho:target', m.target), [m.target])
 
-  // Theme the whole app (background glow included) with the chosen colors.
+  // Theme the whole app (background glow included). --p1/--p2 are registered
+  // @property colors, so they cross-fade instead of snapping.
   useEffect(() => {
     const root = document.documentElement.style
     root.setProperty('--p1', sides[0].color)
     root.setProperty('--p2', sides[1].color)
-    return () => { root.removeProperty('--p1'); root.removeProperty('--p2') }
   }, [sides])
+  useEffect(() => () => {
+    const root = document.documentElement.style
+    root.removeProperty('--p1')
+    root.removeProperty('--p2')
+  }, [])
 
   const label = (i) => sides[i].name.trim() || `Player ${i + 1}`
   const done = m.winner != null
@@ -114,129 +181,144 @@ export default function Binho({ onExit }) {
   }
   const toSetup = () => { setMenu(false); setPhase('setup') }
 
-  if (phase === 'setup') {
-    return (
-      <Setup
-        sides={sides}
-        setSides={setSides}
-        target={m.target}
-        setTarget={(t) => dispatch({ type: 'NEW', target: t })}
-        onStart={start}
-        onExit={onExit}
-      />
-    )
-  }
-
   return (
-    <div className={`binho ${faceOff ? 'face-off' : ''}`}>
-      {[0, 1].map((i) => (
-        <PlayerPanel
-          key={i}
-          idx={i}
-          player={m.players[i]}
-          name={label(i)}
-          target={m.target}
-          dispatch={dispatch}
-          flipped={faceOff && i === 0}
-          isWinner={m.winner === i}
-          done={done}
-        />
-      ))}
+    <motion.div className="game-root" {...screen}>
+      <AnimatePresence mode="wait" initial={false}>
+        {phase === 'setup' ? (
+          <Setup
+            key="setup"
+            sides={sidesWithId}
+            setSides={setSides}
+            target={m.target}
+            setTarget={(t) => dispatch({ type: 'NEW', target: t })}
+            onStart={start}
+            onExit={onExit}
+          />
+        ) : (
+          <motion.div key="play" className={`binho ${faceOff ? 'face-off' : ''}`} {...screen}>
+            {[0, 1].map((i) => (
+              <PlayerPanel
+                key={i}
+                idx={i}
+                player={m.players[i]}
+                opp={m.players[1 - i]}
+                name={label(i)}
+                target={m.target}
+                dispatch={dispatch}
+                flipped={faceOff && i === 0}
+                winner={m.winner}
+                done={done}
+              />
+            ))}
 
-      <nav className="dock glass" aria-label="Match controls">
-        <button className="dock-btn" onClick={onExit} aria-label="All games">
-          <svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" /></svg>
-        </button>
-        <button className="dock-btn" onClick={() => { buzz(8); dispatch({ type: 'UNDO' }) }} disabled={!h.past.length} aria-label="Undo">
-          <svg viewBox="0 0 24 24"><path d="M9 14 4 9l5-5" /><path d="M4 9h11a5 5 0 0 1 0 10h-3" /></svg>
-        </button>
-        <span className="dock-target" aria-label={`First to ${m.target}`}>
-          <small>to</small>{m.target}
-        </span>
-        <button className="dock-btn" onClick={() => setMenu(true)} aria-label="Settings">
-          <svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6" /><circle cx="12" cy="12" r="1.6" /><circle cx="19" cy="12" r="1.6" /></svg>
-        </button>
-        <button className="dock-btn" onClick={toSetup} aria-label="New match">
-          <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.34-5.66" /><path d="M20 4v5h-5" /></svg>
-        </button>
-      </nav>
-
-      {m.pendingRed != null && (
-        <CoinToss
-          carded={{ name: label(m.pendingRed), color: COLORS[m.pendingRed] }}
-          caller={{ name: label(1 - m.pendingRed), color: COLORS[1 - m.pendingRed] }}
-          onDone={() => dispatch({ type: 'RESOLVE_RED' })}
-          onCancel={() => dispatch({ type: 'UNDO' })}
-        />
-      )}
-
-      {done && m.pendingRed == null && (
-        <div className="scrim win-scrim">
-          <div className="sheet glass win-sheet" style={{ '--c': COLORS[m.winner] }}>
-            <div className="rings" aria-hidden><i /><i /><i /></div>
-            <p className="eyebrow">Winner</p>
-            <h2 className="win-name">{label(m.winner)}</h2>
-            <p className="win-score">
-              {m.players[m.winner].score}<span>–</span>{m.players[1 - m.winner].score}
-            </p>
-            <div className="call-row">
-              <button className="btn glass-btn" onClick={() => dispatch({ type: 'UNDO' })}>Undo goal</button>
-              <button className="btn solid-btn" onClick={() => dispatch({ type: 'NEW' })}>Rematch</button>
-            </div>
-            <button className="btn text-btn" onClick={toSetup}>New players</button>
-          </div>
-        </div>
-      )}
-
-      {menu && (
-        <div className="scrim" onClick={(e) => e.target === e.currentTarget && setMenu(false)}>
-          <div className="sheet glass">
-            <div className="sheet-grab" />
-            <h2 className="sheet-title">Match settings</h2>
-
-            <p className="eyebrow">First to</p>
-            <div className="seg">
-              {TARGETS.map((t) => (
-                <button
-                  key={t}
-                  className={t === m.target ? 'on' : ''}
-                  onClick={() => dispatch({ type: 'SET_TARGET', target: t })}
-                >
-                  {t}
-                </button>
-              ))}
-            </div>
-
-            <label className="toggle">
-              <span>
-                Face-off mode
-                <small>Flip the top player so you can play across the board</small>
+            <motion.nav
+              className="dock glass"
+              aria-label="Match controls"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1, transition: { ...spring, delay: 0.14 } }}
+            >
+              <motion.button whileTap={{ scale: 0.85 }} className="dock-btn" onClick={onExit} aria-label="All games">
+                <svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" /></svg>
+              </motion.button>
+              <motion.button
+                whileTap={{ scale: 0.85, rotate: -40 }}
+                className="dock-btn"
+                onClick={() => { buzz(8); dispatch({ type: 'UNDO' }) }}
+                disabled={!h.past.length}
+                aria-label="Undo"
+              >
+                <svg viewBox="0 0 24 24"><path d="M9 14 4 9l5-5" /><path d="M4 9h11a5 5 0 0 1 0 10h-3" /></svg>
+              </motion.button>
+              <span className="dock-target" aria-label={`First to ${m.target}`}>
+                <small>to</small><Roll value={m.target} />
               </span>
-              <input type="checkbox" checked={faceOff} onChange={(e) => setFaceOff(e.target.checked)} />
-              <i aria-hidden />
-            </label>
+              <motion.button whileTap={{ scale: 0.85 }} className="dock-btn" onClick={() => setMenu(true)} aria-label="Settings">
+                <svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6" /><circle cx="12" cy="12" r="1.6" /><circle cx="19" cy="12" r="1.6" /></svg>
+              </motion.button>
+              <motion.button whileTap={{ scale: 0.85, rotate: 120 }} className="dock-btn" onClick={toSetup} aria-label="New match">
+                <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.34-5.66" /><path d="M20 4v5h-5" /></svg>
+              </motion.button>
+            </motion.nav>
 
-            <div className="call-row">
-              <button className="btn glass-btn" onClick={toSetup}>Change players</button>
-              <button className="btn glass-btn" onClick={() => { dispatch({ type: 'NEW' }); setMenu(false) }}>
-                Reset score
-              </button>
-            </div>
+            <AnimatePresence>
+              {m.pendingRed != null && (
+                <CoinToss
+                  key="coin"
+                  carded={{ name: label(m.pendingRed), color: COLORS[m.pendingRed] }}
+                  caller={{ name: label(1 - m.pendingRed), color: COLORS[1 - m.pendingRed] }}
+                  onDone={() => dispatch({ type: 'RESOLVE_RED' })}
+                  onCancel={() => dispatch({ type: 'UNDO' })}
+                />
+              )}
 
-            <details className="rules">
-              <summary>House rules</summary>
-              <ul>
-                <li>Goal = 1 point. First to {m.target} wins.</li>
-                <li>Kick the ball out = yellow card. First one is a warning.</li>
-                <li>Second out = red. Coin toss — the opponent calls it.</li>
-                <li>Call it right: they choose which of your pegs comes out. Call it wrong: you choose.</li>
-              </ul>
-            </details>
+              {done && m.pendingRed == null && (
+                <Sheet key="win" center className="win-sheet" style={{ '--c': COLORS[m.winner] }}>
+                  <div className="rings" aria-hidden><i /><i /><i /></div>
+                  <motion.p className="eyebrow" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0, transition: { delay: 0.1 } }}>
+                    Winner
+                  </motion.p>
+                  <motion.h2
+                    className="win-name"
+                    initial={{ opacity: 0, y: 20, scale: 0.8 }}
+                    animate={{ opacity: 1, y: 0, scale: 1, transition: { ...spring, delay: 0.16 } }}
+                  >
+                    {label(m.winner)}
+                  </motion.h2>
+                  <motion.p className="win-score" initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.28 } }}>
+                    {m.players[m.winner].score}<span>–</span>{m.players[1 - m.winner].score}
+                  </motion.p>
+                  <motion.div
+                    className="call-row"
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={{ opacity: 1, y: 0, transition: { ...spring, delay: 0.34 } }}
+                  >
+                    <motion.button whileTap={{ scale: 0.95 }} className="btn glass-btn" onClick={() => dispatch({ type: 'UNDO' })}>
+                      Undo goal
+                    </motion.button>
+                    <motion.button whileTap={{ scale: 0.95 }} className="btn solid-btn" onClick={() => dispatch({ type: 'NEW' })}>
+                      Rematch
+                    </motion.button>
+                  </motion.div>
+                  <button className="btn text-btn" onClick={toSetup}>New players</button>
+                </Sheet>
+              )}
 
-            <button className="btn solid-btn" onClick={() => setMenu(false)}>Done</button>
-          </div>
-        </div>
-      )}
-    </div>
+              {menu && (
+                <Sheet key="menu" onClose={() => setMenu(false)}>
+                  <h2 className="sheet-title">Match settings</h2>
+
+                  <p className="eyebrow">First to</p>
+                  <Seg id="menu-target" options={TARGETS} value={m.target} onChange={(t) => dispatch({ type: 'SET_TARGET', target: t })} />
+
+                  <label className="toggle">
+                    <span>
+                      Face-off mode
+                      <small>Flip the top player so you can play across the board</small>
+                    </span>
+                    <input type="checkbox" checked={faceOff} onChange={(e) => setFaceOff(e.target.checked)} />
+                    <i aria-hidden />
+                  </label>
+
+                  <div className="call-row">
+                    <motion.button whileTap={{ scale: 0.95 }} className="btn glass-btn" onClick={toSetup}>Change players</motion.button>
+                    <motion.button
+                      whileTap={{ scale: 0.95 }}
+                      className="btn glass-btn"
+                      onClick={() => { dispatch({ type: 'NEW' }); setMenu(false) }}
+                    >
+                      Reset score
+                    </motion.button>
+                  </div>
+
+                  <Rules target={m.target} />
+
+                  <motion.button whileTap={{ scale: 0.96 }} className="btn solid-btn" onClick={() => setMenu(false)}>Done</motion.button>
+                </Sheet>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   )
 }
